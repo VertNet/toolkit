@@ -1,0 +1,21 @@
+List of changes to the migrator template, in reverse chronological order of implementation:
+
+2013-07-12 Changed PurgeNonprintingCharacters.sh to use сс instead of || as search and replace pattern because content with || was found in provider data (Macaulay Library).
+2013-07-12 Added notHigherGeography field to LookupGeography in VertNetVocabularies.mdb, to capture information in higher geography that should be moved to locality. Added report to show records where changes can be suggested.
+2013-07-12 Added error field to the indeterminate geography report and began managing that field in VertNetVocabularies.mdb.
+2013-07-03 Amended Aggregator database for Append Queries (Fish, Fossil, Herp, and Mammal) that mapped verbatimCoordinates to verbatimCoordinateSystem.
+2013-07-03 Added GeorefVerificationStatus vocabulary management.
+2013-06-10 Added Purge processing for Dublic Core types Sound, StillImage, and MovingImage to PurgeNonprintingCharacters.sh and NewLineIssues.awk.
+2013-03-04 Corrected faulty logic in "Update DecLatLong for range" and "Update DecLatLong for non-numeric" queries.
+2013-05-03 Change strategy for verbatim classification. Store this in higherClassification with all ranks given in the source from genus up. Do not write over it with standardized values.
+2013-05-02 Added a duplicate catalogNumber report to the outputs.
+2013-05-01 Slightly rearranged and demarcated processing macro to distinguish production of SimpleDwC-verbatim, LegacyData, and SimpleDwC. Better demonstrates where data cleaning could be done outside the migrator.
+2013-05-01 Added some verbatimLatitude and Longitude processing queries used in CM migrator to produce decimalLatitude and Longitude.
+2013-04-18 Nonprinting character report (in RunAggregators script) added to outputs in reports folder.
+2013-04-17 Added more paths in scripts to find MSACCESS.EXE so that scripts will run on a larger number of default configurations.
+2013-04-17 Added the capability to split the file ForIPT\SimpleDwCForVertNetPrePurge.csv into smaller files for purge processing to avoid out of memory errors.
+2013-04-15 Corrected the Prepend Geography to verbatimLocality query to be an update query.
+2013-04-15 Added LookupReproductiveCondition table to local vocabularies processing and MySQL, including Stats. Relinked to StatsCompleteness table.
+2013-03-15 Created reports folder and changed report file export destinations to it.
+2013-03-15 Amended reports to compare verbatim original genus, family, order to standard versions - was comparing published versus standard.
+2013-03-15 Start adding non-DwC standard taxonomy rank information to dynamicProperties.

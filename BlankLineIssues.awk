@@ -1,5 +1,6 @@
 #!/usr/bin/awk -f
 BEGIN {
+#out_file = "BlankLineIssues.txt"
 x=0
 FS=","
 }

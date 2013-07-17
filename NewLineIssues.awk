@@ -1,9 +1,9 @@
+#!/usr/bin/awk -f
 BEGIN {
-out_file = "LineIssues.txt"
 x=0
 FS=","
 }
-$1 !~ /PhysicalObject/ { x=x+1; print NR, $0 >out_file }
-END { print x " issue lines" }
+#! $1 is the supposed to be the type field.
+$1 !~ /PhysicalObject|type|Event|Sound|StillImage|MovingImage/ { x=x+1; print NR, $0 }
+END { print x " lines have a new line in the content" }
 
-#!where $1 is the field basisOfRecord

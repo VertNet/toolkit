@@ -4,8 +4,6 @@
 # show UTF8 encoding. 
 # Assumptions:
 #   Original file is actually UTF8-encoded.
-# Example:
-#   gawk -f utf8er.awk source.csv dest_with_bom.csv
 
 BEGIN {
 #out_file = "utf8out.csv"
