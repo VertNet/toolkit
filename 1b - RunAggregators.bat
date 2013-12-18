@@ -24,7 +24,7 @@ REM Make sure the paths in this script point correctly to the location
 REM of the Microsoft Access application.
 REM
 REM Make sure the destination of the output CSV file is correct in the 
-REM TransferText action of the "Export SimpleDwC" macro in the 
+REM TransferText action of the "Aggregate and Export" macro in the 
 REM AggregatorTemplate.mdb database.
 
 REM This script assumes one of two locations for Microsoft Office. Chance the value
@@ -42,11 +42,9 @@ if not exist %accessexe% goto end
 REM Make a copy of the Aggregator.
 copy templates\AggregatorTemplate.mdb workspace\Aggregator.mdb
 
-REM Run the "Export SimpleDwC" macro to create a new aggregated Simple Darwin Core CSV file for IPT.
+REM Run the "Aggregate and Export" macro to create a new aggregated Simple Darwin Core CSV file for IPT.
 REM Makes a single UTF8-encoded CSV file for the combined data sources created in the RunMigrators
 REM script.
-REM Also optionally makes a DwC2 table conforming to Darwin Core 1.21 (MaNIS/HerpNet/ORNIS).
-REM "C:\Program Files\Microsoft Office\OFFICE11\MSACCESS.EXE" %CD%\workspace\Aggregator.mdb /x "Aggregate and Export"
 %accessexe% %CD%\workspace\Aggregator.mdb /x "Aggregate and Export"
 
 REM Remove previous outputs from the folder
@@ -69,13 +67,16 @@ REM Run script to remove non-printing control characters \r \n \f \v \t in data 
 REM Note that large files may cause out of memory errors resulting in an empty SimpleDwCForVertNet.csv file.
 REM split the file into parts of 100000 lines or less each and purge them separately.
 REM Set to split on 100M records by default so that this only has to be edited if a memory error is encountered.
-split -l 100000000 ForIPT\SimpleDwCForVertNetPrePurge.csv ForIPT\part
+split -l 100000 ForIPT\SimpleDwCForVertNetPrePurge.csv ForIPT\part
 sh PurgeNonprintingCharacters.sh ForIPT\partaa
-REM sh PurgeNonprintingCharacters.sh ForIPT\partab
-REM sh PurgeNonprintingCharacters.sh ForIPT\partac
+sh PurgeNonprintingCharacters.sh ForIPT\partab
+sh PurgeNonprintingCharacters.sh ForIPT\partac
+sh PurgeNonprintingCharacters.sh ForIPT\partad
+sh PurgeNonprintingCharacters.sh ForIPT\partae
+sh PurgeNonprintingCharacters.sh ForIPT\partaf
 cd ForIPT
-REM cat partaa partab partac > SimpleDwCForVertNet.csv
-cat partaa > SimpleDwCForVertNet.csv
+cat partaa partab partac partad partae partaf > SimpleDwCForVertNet.csv
+REM cat partaa > SimpleDwCForVertNet.csv
 rm parta*
 diff SimpleDwCForVertNetPrepurge.csv SimpleDwCForVertNet.csv > purge_diffs.txt
 cd ..
@@ -85,16 +86,6 @@ REM sh PurgeNonprintingCharacters.sh ForIPT\SimpleDwCForVertNet.csv
 
 REM Run NewLine reporting script again after purging new lines and carriage returns in data
 gawk -f NewLineIssues.awk ForIPT\SimpleDwCForVertNet.csv>ForIPT\NewLineIssuesAfterCRLFRemoval.txt
-
-REM Now import the purged results to Access again and make the DwC2 table for DiGIR.
-REM For source data having no nonprinting characters, it is not necessary to import again
-REM as this should  be done in the macro 'Aggregate and Export' before exporting.
-REM "C:\Program Files\Microsoft Office\OFFICE11\MSACCESS.EXE" %CD%\ForDiGIR\Aggregator.mdb /x "Import and Make DwC2"
-%accessexe% %CD%\workspace\Aggregator.mdb /x "Import and Make DwC2"
-
-REM Put the resulting database in place of the previous version of it.
-del ForDiGIR\VertebratesDwC2ForDiGIR.mdb
-move workspace\Aggregator.mdb ForDiGIR\VertebratesDwC2ForDiGIR.mdb
 
 REM Archive the resulting SimpleDwCForVertNet file with gzip.
 REM cd ForIPT

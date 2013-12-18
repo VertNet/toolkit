@@ -1,5 +1,13 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2013-12-10 Amended and separated checks for non-numeric decimalLatitude and decimalLongitude in queries "Update DecLatLong for non-numeric1" AND "Update DecLatLong for non-numeric2".
+2013-12-10 Added reports for fossils to the "Do DwC2 Migration" macro.
+2013-09-24 Added reports for StatsDifferences and StatsCompleteness and included these in the generated reports.
+2013-09-02 Amended query name for "Update NomenclaturalStatus" to "Update Nomenclatural Code", which is what it actually does.
+2013-08-27 Moved the encumbering part of the "Do DwC2 Migration" macro to just before copying SimpleDwC-verbatim into SimpleDwC. Otherwise the encumberances would not occur.
+2013-07-28 Separated the DiGIR processing into its own template and script to avoid running it if not necessary.
+2013-07-28 Changed PurgeNonprintingCharacters.sh to replace last carriage return/line feed combination in the file with сс so that split files will concatenate without joining to the first line of the next file.
+2013-07-17 Added GitHub repository at https://github.com/VertNet/toolkit to manage code.
 2013-07-12 Changed PurgeNonprintingCharacters.sh to use сс instead of || as search and replace pattern because content with || was found in provider data (Macaulay Library).
 2013-07-12 Added notHigherGeography field to LookupGeography in VertNetVocabularies.mdb, to capture information in higher geography that should be moved to locality. Added report to show records where changes can be suggested.
 2013-07-12 Added error field to the indeterminate geography report and began managing that field in VertNetVocabularies.mdb.
