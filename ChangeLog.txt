@@ -1,5 +1,6 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2013-12-21 Made amendments to various queries so that they are more generic and less likely to require adjustment when used as a template for new collections. Includes "Append Source Data to Specimens", "Prepend verbatim geography to verbatimLocality", "SimpleDwC-verbatim from Specimens", and "Update higherClassification with verbatim taxonomy".
 2013-12-20 Added queries "Update species subspecies to null for null genus" and "Update subspecies to null for null species" so that records without higher ranks do not have lower rank epithets.
 2013-12-10 Amended and separated checks for non-numeric decimalLatitude and decimalLongitude in queries "Update DecLatLong for non-numeric1" AND "Update DecLatLong for non-numeric2".
 2013-12-10 Added reports for fossils to the "Do DwC2 Migration" macro.
