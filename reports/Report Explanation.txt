@@ -1,0 +1,157 @@
+During processing, the VertNet toolkit ("migrator") transforms data from it's original fields and their content into fields, formats, and vocabularies consistent with the Darwin Core and with the purpose of facilitating discovery. In many cases, the changes made during processing reveal data that could be improved at the source. Following is a list of reports generated during processing for VertNet showing how to interpret their contents. The square brackets indicate that the name of the data set to which the report applies, such as "Birds", "Fish", "Fossils", "Herps", "Mammals", or "Verts".
+
+Report - [Collection] - duplicate catalogNumber.csv
+  This reports contains a list of catalog numbers that appear more than once within a given collection. If the catalogNumber is meant to uniquely identify records within a collection of data set, then duplicates are errors and should be resolved at the source. The columns in this report are:
+    catalogNumber Field - the duplicated catalogNumber.
+	NumberOfDups - the number of records that have the given catalogNumber.
+	
+Report - [Collection] - IndeterminateGeography.csv
+  This report contains a list of records for which the verbatim original contents of the geography result in an ambiguity that cannot be resolved with the information in the geographic fields alone. During data processing, VertNet attempts to provide standardized geography using the Darwin Core geographic terms (continent, country, stateProvince, county, municipality, island, islandGroup, waterBody) based on the originally provided higher geographic data - fields less specific than the locality field (http://rs.tdwg.org/dwc/terms/index.htm#locality). If the original geography could be interpreted as more than one distinct region, or if the original geography is self-inconsistent, the record will appear in the report. The columns in this report are:
+    catalogNumber - the catalogNumber identifying the record having indeterminate geography.
+    verbatimMunicipality - the contents of the original data that were mapped to the Darwin Core municipality field for the given catalogNumber.
+    verbatimCounty - the contents of the original data that were mapped to the Darwin Core county field for the given catalogNumber.
+    verbatimStateProvince - the contents of the original data that were mapped to the Darwin Core stateProvince field for the given catalogNumber.
+    verbatimCountry - the contents of the original data that were mapped to the Darwin Core country field for the given catalogNumber.
+    verbatimContinent - the contents of the original data that were mapped to the Darwin Core continent field for the given catalogNumber.
+    verbatimWaterBody - the contents of the original data that were mapped to the Darwin Core waterBody field for the given catalogNumber.
+    verbatimIslandGroup - the contents of the original data that were mapped to the Darwin Core islandGroup field for the given catalogNumber.
+    verbatimIsland - the contents of the original data that were mapped to the Darwin Core island field for the given catalogNumber.
+    error - a description of why the geography of the record is indeterminate, ambiguous, or self-inconsistent.
+  
+Report - [Collection] - non-standard Continent.csv
+  This report contains the list of records for which the verbatim original continent does not match the standard value determined from the VertNet geographic authority, the latest version of which can be found at https://raw.github.com/tucotuco/DwCVocabs/master/vocabs/Geography.csv. The verbatim and standardized continent and waterBody are included because these concepts are often conflated in original data.
+    catalogNumber - the catalogNumber identifying the record having a non-standard value.
+    verbatimContinent - the contents of the original data that were mapped to the Darwin Core continent field for the given catalogNumber.
+	Continent - the standardized value of the continent for the record.
+    verbatimWaterBody - the contents of the original data that were mapped to the Darwin Core waterBody field for the given catalogNumber.
+	Waterbody - the standardized value of the waterBody for the record.
+	
+Report - [Collection] - non-standard Country.csv
+  This report contains the list of records for which the verbatim original country does not match the standard value determined from the VertNet geographic authority, the latest version of which can be found at https://raw.github.com/tucotuco/DwCVocabs/master/vocabs/Geography.csv.
+    catalogNumber - the catalogNumber identifying the record having a non-standard value.
+    verbatimCountry - the contents of the original data that were mapped to the Darwin Core country field for the given catalogNumber.
+	Country - the standardized value of the country for the record.
+
+Report - [Collection] - non-standard County.csv
+  This report contains the list of records for which the verbatim original county does not match the standard value determined from the VertNet geographic authority, the latest version of which can be found at https://raw.github.com/tucotuco/DwCVocabs/master/vocabs/Geography.csv.
+    catalogNumber - the catalogNumber identifying the record having a non-standard value.
+    verbatimCounty - the contents of the original data that were mapped to the Darwin Core county field for the given catalogNumber.
+	County - the standardized value of the county for the record.
+
+Report - [Collection] - non-standard Family.csv
+  This report contains the list of records for which the verbatim original family does not match the standard value determined from the VertNet taxonomic classification authority, the latest version of which can be found at https://raw.github.com/tucotuco/DwCVocabs/master/vocabs/Classification.csv
+    catalogNumber - the catalogNumber identifying the record having a non-standard value.
+    Genus - the contents of the original data that were mapped to the Darwin Core genus field for the given catalogNumber.
+	standardGenus - the currently accepted genus according to the taxonomic authority provided in the authority field in this report.
+	family - the contents of the original data that were mapped to the Darwin Core family field for the given catalogNumber.
+	standardFamily - the currently accepted family according to the taxonomic authority provided in the authority field in this report.
+	authority - the authority in which this classification for the accepted genus was found.
+
+Report - [Collection] - non-standard Genus.csv
+  This report contains the list of records for which the verbatim original genus does not match the standard value determined from the VertNet taxonomic classification authority, the latest version of which can be found at https://raw.github.com/tucotuco/DwCVocabs/master/vocabs/Classification.csv
+    catalogNumber - the catalogNumber identifying the record having a non-standard value.
+    Genus - the contents of the original data that were mapped to the Darwin Core genus field for the given catalogNumber.
+	standardGenus - the currently accepted genus according to the taxonomic authority provided in the authority field in this report.
+	authority - the authority in which this classification for the accepted genus was found.
+	error - The reason why the original genus is not accepted.
+
+Report - [Collection] - non-standard Island.csv
+  This report contains the list of records for which the verbatim original island does not match the standard value determined from the VertNet geographic authority, the latest version of which can be found at https://raw.github.com/tucotuco/DwCVocabs/master/vocabs/Geography.csv. The verbatim and standardized island, islandGroup, waterBody, and county are included because these concepts may be needed to determine the reason why the original value is not standard.
+    catalogNumber - the catalogNumber identifying the record having a non-standard value.
+    verbatimWaterBody - the contents of the original data that were mapped to the Darwin Core waterBody field for the given catalogNumber.
+	Waterbody - the standardized value of the waterBody for the record.
+    verbatimIslandGroup - the contents of the original data that were mapped to the Darwin Core islandGroup field for the given catalogNumber.
+	IslandGroup - the standardized value of the islandGroup for the record.
+    verbatimIsland - the contents of the original data that were mapped to the Darwin Core island field for the given catalogNumber.
+	Island - the standardized value of the island for the record.
+    verbatimCounty - the contents of the original data that were mapped to the Darwin Core county field for the given catalogNumber.
+	County - the standardized value of the county for the record.
+	
+Report - [Collection] - non-standard IslandGroup.csv
+  This report contains the list of records for which the verbatim original islandGroup does not match the standard value determined from the VertNet geographic authority, the latest version of which can be found at https://raw.github.com/tucotuco/DwCVocabs/master/vocabs/Geography.csv. The verbatim and standardized island, islandGroup, and waterBody are included because these concepts may be needed to determine the reason why the original value is not standard.
+    catalogNumber - the catalogNumber identifying the record having a non-standard value.
+    verbatimWaterBody - the contents of the original data that were mapped to the Darwin Core waterBody field for the given catalogNumber.
+	Waterbody - the standardized value of the waterBody for the record.
+    verbatimIslandGroup - the contents of the original data that were mapped to the Darwin Core islandGroup field for the given catalogNumber.
+	IslandGroup - the standardized value of the islandGroup for the record.
+    verbatimIsland - the contents of the original data that were mapped to the Darwin Core island field for the given catalogNumber.
+	Island - the standardized value of the island for the record.
+
+Report - [Collection] - non-standard Municipality.csv
+  This report contains the list of records for which the verbatim original municipality does not match the standard value determined from the VertNet geographic authority, the latest version of which can be found at https://raw.github.com/tucotuco/DwCVocabs/master/vocabs/Geography.csv. The verbatim and standardized country, stateProvince, county, and municipality are included because these concepts may be needed to determine the reason why the original value is not standard.
+    catalogNumber - the catalogNumber identifying the record having a non-standard value.
+    verbatimCountry - the contents of the original data that were mapped to the Darwin Core country field for the given catalogNumber.
+	Country - the standardized value of the country for the record.
+    verbatimStateProvince - the contents of the original data that were mapped to the Darwin Core stateProvince field for the given catalogNumber.
+	StateProvince - the standardized value of the stateProvince for the record.
+    verbatimCounty - the contents of the original data that were mapped to the Darwin Core county field for the given catalogNumber.
+	County - the standardized value of the county for the record.
+    verbatimMunicipality - the contents of the original data that were mapped to the Darwin Core municipality field for the given catalogNumber.
+	Municipality - the standardized value of the municipality for the record.
+
+Report - [Collection] - non-standard Order.csv
+  This report contains the list of records for which the verbatim original taxonomic order does not match the standard value determined from the VertNet taxonomic classification authority, the latest version of which can be found at https://raw.github.com/tucotuco/DwCVocabs/master/vocabs/Classification.csv
+    catalogNumber - the catalogNumber identifying the record having a non-standard value.
+	order - the contents of the original data that were mapped to the Darwin Core order field for the given catalogNumber.
+	standardOrder - the currently accepted order according to the taxonomic authority provided in the authority field in this report.
+	authority - the authority in which this classification for the accepted genus was found.
+    Genus - the contents of the original data that were mapped to the Darwin Core genus field for the given catalogNumber.
+	standardGenus - the currently accepted genus according to the taxonomic authority provided in the authority field in this report.
+	family - the contents of the original data that were mapped to the Darwin Core family field for the given catalogNumber.
+	standardFamily - the currently accepted family according to the taxonomic authority provided in the authority field in this report.
+
+Report - [Collection] - non-standard StateProvince.csv
+  This report contains the list of records for which the verbatim original stateProvince does not match the standard value determined from the VertNet geographic authority, the latest version of which can be found at https://raw.github.com/tucotuco/DwCVocabs/master/vocabs/Geography.csv. The verbatim and standardized country, stateProvince, county, islandGroup, and island are included because these concepts may be needed to determine the reason why the original value is not standard.
+    catalogNumber - the catalogNumber identifying the record having a non-standard value.
+    verbatimCountry - the contents of the original data that were mapped to the Darwin Core country field for the given catalogNumber.
+	Country - the standardized value of the country for the record.
+    verbatimStateProvince - the contents of the original data that were mapped to the Darwin Core stateProvince field for the given catalogNumber.
+	StateProvince - the standardized value of the stateProvince for the record.
+    verbatimCounty - the contents of the original data that were mapped to the Darwin Core county field for the given catalogNumber.
+	County - the standardized value of the county for the record.
+    verbatimIslandGroup - the contents of the original data that were mapped to the Darwin Core islandGroup field for the given catalogNumber.
+	IslandGroup - the standardized value of the islandGroup for the record.
+    verbatimIsland - the contents of the original data that were mapped to the Darwin Core island field for the given catalogNumber.
+	Island - the standardized value of the island for the record.
+
+Report - [Collection] - non-standard WaterBody.csv
+  This report contains the list of records for which the verbatim original waterBody does not match the standard value determined from the VertNet geographic authority, the latest version of which can be found at https://raw.github.com/tucotuco/DwCVocabs/master/vocabs/Geography.csv. The verbatim and standardized waterBody and continent are included because these concepts are often conflated in original data.
+    catalogNumber - the catalogNumber identifying the record having a non-standard value.
+    verbatimWaterBody - the contents of the original data that were mapped to the Darwin Core waterBody field for the given catalogNumber.
+	Waterbody - the standardized value of the waterBody for the record.
+    verbatimContinent - the contents of the original data that were mapped to the Darwin Core continent field for the given catalogNumber.
+	Continent - the standardized value of the continent for the record.
+
+Report - [Collection] - NotHigherGeography.csv
+"catalogNumber","verbatimMunicipality","verbatimCounty","verbatimStateProvince","verbatimCountry","verbatimContinent","verbatimWaterBody","verbatimIslandGroup","verbatimIsland","notHigherGeography"
+  This report contains a list of records for which the verbatim original contents of the geography contain information that does not fit within the standard Darwin Core geography fields. During data processing, VertNet attempts to provide standardized geography using the Darwin Core geographic terms (continent, country, stateProvince, county, municipality, island, islandGroup, waterBody) based on the originally provided higher geographic data - fields less specific than the locality field (http://rs.tdwg.org/dwc/terms/index.htm#locality). If the original geography contains information that does not correspond with any of these fields, the record will appear in the report. The columns in this report are:
+    catalogNumber - the catalogNumber identifying the record having indeterminate geography.
+    verbatimMunicipality - the contents of the original data that were mapped to the Darwin Core municipality field for the given catalogNumber.
+    verbatimCounty - the contents of the original data that were mapped to the Darwin Core county field for the given catalogNumber.
+    verbatimStateProvince - the contents of the original data that were mapped to the Darwin Core stateProvince field for the given catalogNumber.
+    verbatimCountry - the contents of the original data that were mapped to the Darwin Core country field for the given catalogNumber.
+    verbatimContinent - the contents of the original data that were mapped to the Darwin Core continent field for the given catalogNumber.
+    verbatimWaterBody - the contents of the original data that were mapped to the Darwin Core waterBody field for the given catalogNumber.
+    verbatimIslandGroup - the contents of the original data that were mapped to the Darwin Core islandGroup field for the given catalogNumber.
+    verbatimIsland - the contents of the original data that were mapped to the Darwin Core island field for the given catalogNumber.
+    notHigherGeography - a description of why the part of the geography that should in some other field in the original record.
+
+Report - [Collection] - StatsCompleteness.csv
+  This report contains a list of records of the statistics on completeness for the data set. Each time the data set goes through processing (through the "migrator"), the numbers of records in the data set that were populated before and after processing are recorded. The report shows these counts in distinct fields after processing and in the original for a multitude of Darwin Core fields. For example, sexafter shows the number of records for which the sex field after processing was not null, while sexorig shows the number of records for which the original value of the sex field was not null. The remaining columns in this report are:
+    id - a unique sequential identifier for the statsCompleteness record. A record is generated each time a migrator is run.
+	institutionCode - the value of the institutionCode for the processed data set.
+	collectionCode - the value of the collectionCode for the processed data set.
+	statdate - the date on which the record was created by running the migrator for the data set.
+	recordcount - the total number of records in the data set.
+
+Report - [Collection] - StatsDifferences.csv
+  This report contains a list of the statistics on changes that were made to standardize or complete the data set. Each time the data set goes through processing (through the "migrator"), the numbers of changes in distinct fields in the data set are recorded. The report shows these changes and the number of records that were affected. The columns in this report are:
+	institutionCode - the value of the institutionCode for the processed data set.
+	collectionCode - the value of the collectionCode for the processed data set.
+	term - the Darwin Core term for which the value was changed during migration.
+	was - the value of the term before migration.
+	became - the value of the term after migration.
+	modified - the date on which the record was modified by running a migration.
+
+Report-LinesWithNonprintingCharacters.txt
+  This report contains a list of the differences between records before and after data processing removed non-printing (e.g., tab, vertical tab, new line) characters from the content of fields in the data. The report is a result of the execution of the Unix diff command on the files before and after removing the non-printing characters. To understand the report, refer to documentation on the diff command.
