@@ -1,5 +1,7 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2014-05-21 Added reports for Year, Month, and Day out of range.
+2014-05-21 Changed typo in field verbatimCoordinnates to verbatimCoordinates in LegacyData tables.
 2014-04-14 In the query "SimpleDwC-verbatim from Specimens", added a check for preparator=collector, and used only one copy in recordedBy if so.
 2014-02-03 Added query to turn coordinateUncertaintyInMeters to null if "0".
 2013-12-21 Made amendments to various queries so that they are more generic and less likely to require adjustment when used as a template for new collections. Includes "Append Source Data to Specimens", "Prepend verbatim geography to verbatimLocality", "SimpleDwC-verbatim from Specimens", and "Update higherClassification with verbatim taxonomy".
@@ -7,8 +9,8 @@ List of changes to the migrator template, in reverse chronological order of impl
 2013-12-10 Amended and separated checks for non-numeric decimalLatitude and decimalLongitude in queries "Update DecLatLong for non-numeric1" AND "Update DecLatLong for non-numeric2".
 2013-12-10 Added reports for fossils to the "Do DwC2 Migration" macro.
 2013-09-24 Added reports for StatsDifferences and StatsCompleteness and included these in the generated reports.
-2013-09-02 Amended query name for "Update NomenclaturalStatus" to "Update Nomenclatural Code", which is what it actually does.
-2013-08-27 Moved the encumbering part of the "Do DwC2 Migration" macro to just before copying SimpleDwC-verbatim into SimpleDwC. Otherwise the encumberances would not occur.
+2013-09-02 Amended query name for "Update NomenclaturalStatus" to "Update NomenclaturalCode", which is what it actually does.
+2013-08-27 Moved the encumbering part of the "Do DwC2 Migration" macro to just before copying SimpleDwC-verbatim into SimpleDwC. Otherwise the encumbrances would not occur.
 2013-07-28 Separated the DiGIR processing into its own template and script to avoid running it if not necessary.
 2013-07-28 Changed PurgeNonprintingCharacters.sh to replace last carriage return/line feed combination in the file with сс so that split files will concatenate without joining to the first line of the next file.
 2013-07-17 Added GitHub repository at https://github.com/VertNet/toolkit to manage code.
