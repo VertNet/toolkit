@@ -1,5 +1,10 @@
 During processing, the VertNet toolkit ("migrator") transforms data from it's original fields and their content into fields, formats, and vocabularies consistent with the Darwin Core and with the purpose of facilitating discovery. In many cases, the changes made during processing reveal data that could be improved at the source. Following is a list of reports generated during processing for VertNet showing how to interpret their contents. The square brackets indicate that the name of the data set to which the report applies, such as "Birds", "Fish", "Fossils", "Herps", "Mammals", or "Verts".
 
+Report - [Collection] - Day out of Range.csv
+  This reports contains a list of records for which the day field is less than 1 or greater than the number of days in the given month. The columns in this report are:
+    catalogNumber Field - the catalogNumber for the record.
+	day - the value of the day field that is outside the valid range.
+	
 Report - [Collection] - duplicate catalogNumber.csv
   This reports contains a list of catalog numbers that appear more than once within a given collection. If the catalogNumber is meant to uniquely identify records within a collection of data set, then duplicates are errors and should be resolved at the source. The columns in this report are:
     catalogNumber Field - the duplicated catalogNumber.
@@ -18,6 +23,11 @@ Report - [Collection] - IndeterminateGeography.csv
     verbatimIsland - the contents of the original data that were mapped to the Darwin Core island field for the given catalogNumber.
     error - a description of why the geography of the record is indeterminate, ambiguous, or self-inconsistent.
   
+Report - [Collection] - Month out of Range.csv
+  This reports contains a list of records for which the month field is less than 1 or greater than 12. The columns in this report are:
+    catalogNumber Field - the catalogNumber for the record.
+	month - the value of the month field that is outside the valid range.
+	
 Report - [Collection] - non-standard Continent.csv
   This report contains the list of records for which the verbatim original continent does not match the standard value determined from the VertNet geographic authority, the latest version of which can be found at https://raw.github.com/tucotuco/DwCVocabs/master/vocabs/Geography.csv. The verbatim and standardized continent and waterBody are included because these concepts are often conflated in original data.
     catalogNumber - the catalogNumber identifying the record having a non-standard value.
@@ -153,5 +163,10 @@ Report - [Collection] - StatsDifferences.csv
 	became - the value of the term after migration.
 	modified - the date on which the record was modified by running a migration.
 
+Report - [Collection] - Year out of Range.csv
+  This reports contains a list of records for which the year field is less than 1750 or greater than the year at the time the migrator was run. The columns in this report are:
+    catalogNumber Field - the catalogNumber for the record.
+	year - the value of the year field that is outside the valid range.
+	
 Report-LinesWithNonprintingCharacters.txt
   This report contains a list of the differences between records before and after data processing removed non-printing (e.g., tab, vertical tab, new line) characters from the content of fields in the data. The report is a result of the execution of the Unix diff command on the files before and after removing the non-printing characters. To understand the report, refer to documentation on the diff command.
