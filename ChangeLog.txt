@@ -1,5 +1,7 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2014-06-11 Added step-wise processing for verbatim coordinates based on diversity in TTU Mammals data. Should be more readily reusable in other contexts than what the migrator had before. Removed previous LegacyData verbatim coordinate processing.
+2014-06-11 Changed query "Update CoordinateUncertaintyInMeters from LegacyData" to convert coordinateUncertaintyInMeters to a long integer.
 2014-05-21 Added reports for Year, Month, and Day out of range.
 2014-05-21 Changed typo in field verbatimCoordinnates to verbatimCoordinates in LegacyData tables.
 2014-04-14 In the query "SimpleDwC-verbatim from Specimens", added a check for preparator=collector, and used only one copy in recordedBy if so.

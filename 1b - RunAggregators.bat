@@ -66,7 +66,7 @@ gawk -f BlankLineIssues.awk ForIPT\SimpleDwCForVertNetPrepurge.csv>ForIPT\BlankL
 REM Run script to remove non-printing control characters \r \n \f \v \t in data fields.
 REM Note that large files may cause out of memory errors resulting in an empty SimpleDwCForVertNet.csv file.
 REM split the file into parts of 100000 lines or less each and purge them separately.
-REM Set to split on 100M records by default so that this only has to be edited if a memory error is encountered.
+REM Set to split on 100k records by default so that this only has to be edited if a memory error is encountered.
 split -l 100000 ForIPT\SimpleDwCForVertNetPrePurge.csv ForIPT\part
 sh PurgeNonprintingCharacters.sh ForIPT\partaa
 sh PurgeNonprintingCharacters.sh ForIPT\partab
