@@ -1,6 +1,13 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
-2014-06-11 Added step-wise processing for verbatim coordinates based on diversity in TTU Mammals data. Should be more readily reusable in other contexts than what the migrator had before. Removed previous LegacyData verbatim coordinate processing.
+2014-07-16 Added query "Update higherGeography for all Nulls".
+2014-06-11 Added step-wise processing for verbatim coordinates based on diversity in TTU Mammals data. Should be more readily reusable in other contexts than what the migrator had before. Removed previous LegacyData verbatim coordinate processing (
+"Update LegacyData with LatLong from verbatimCoordinates", 
+"Update LegacyData for missing Dirs", 
+"Update LegacyData with DecimalDegrees", 
+"Update LegacyData with DMS", 
+"Update LegacyData with MaxErrorDistance",
+"Update LegacyData with parsed decLatLong").
 2014-06-11 Changed query "Update CoordinateUncertaintyInMeters from LegacyData" to convert coordinateUncertaintyInMeters to a long integer.
 2014-05-21 Added reports for Year, Month, and Day out of range.
 2014-05-21 Changed typo in field verbatimCoordinnates to verbatimCoordinates in LegacyData tables.
