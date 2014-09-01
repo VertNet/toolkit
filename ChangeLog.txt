@@ -1,5 +1,6 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2014-09-01 Update queries "Update infraspecificEpithet for SSP" and "Update specificEpithet for SP".
 2014-07-24 Added query "Report - missing catalogNumber".
 2014-07-16 Added query "Update higherGeography for all Nulls".
 2014-06-11 Added step-wise processing for verbatim coordinates based on diversity in TTU Mammals data. Should be more readily reusable in other contexts than what the migrator had before. Removed previous LegacyData verbatim coordinate processing (
