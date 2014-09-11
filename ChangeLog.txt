@@ -1,5 +1,6 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2014-09-11 Added query "Update eventDate for yyyy-mm-dd" to correct eventDates with single digit month and day. This happens systematically with collections exported from Specify.
 2014-09-01 Updated queries "Update infraspecificEpithet for SSP" and "Update specificEpithet for SP".
 2014-07-24 Added query "Report - missing catalogNumber".
 2014-07-16 Added query "Update higherGeography for all Nulls".
