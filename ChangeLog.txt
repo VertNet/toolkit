@@ -1,5 +1,6 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2014-09-16 Added processing of the degree symbol in queries "01 - Legacy latitude replace characters" and "01 - Legacy longitude replace characters".
 2014-09-16 Corrected processing of signs in queries "02 - Legacy longitude decimal degrees sans hemisphere" and "13 - LegacyData decimal latlong".
 2014-09-16 Corrected error that referenced verbatimLatitude instead of verbatimLongitude in query "01 - Legacy longitude replace characters".
 2014-09-16 Copied the structure of LegacyData from TTU Mammals migrator so that the step-wise processing implemented on 2014-06-11 can function correctly with the template and migrators derived from it.
