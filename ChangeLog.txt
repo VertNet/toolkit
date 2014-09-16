@@ -1,5 +1,6 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2014-09-16 Corrected error that referenced verbatimLatitude instead of verbatimLongitude in query "01 - Legacy longitude replace characters".
 2014-09-16 Copied the structure of LegacyData from TTU Mammals migrator so that the step-wise processing implemented on 2014-06-11 can function correctly with the template and migrators derived from it.
 2014-09-11 Added query "Update eventDate for yyyy-mm-dd" to correct eventDates with single digit month and day. This happens systematically with collections exported from Specify.
 2014-09-01 Updated queries "Update infraspecificEpithet for SSP" and "Update specificEpithet for SP".
