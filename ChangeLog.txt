@@ -1,5 +1,7 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2014-09-19 Added queries "Update out of range year to null", "Update out of range month to null", "Update out of range day to null".
+2014-09-19 Added check for leap year not in centuries except those evenly divisible by 400 in query "Update DayOfYear".
 2014-09-16 Added processing to replace more symbols in queries "01 - Legacy latitude replace characters" and "01 - Legacy longitude replace characters".
 2014-09-16 Corrected processing of signs in queries "02 - Legacy longitude decimal degrees sans hemisphere" and "13 - LegacyData decimal latlong".
 2014-09-16 Corrected error that referenced verbatimLatitude instead of verbatimLongitude in query "01 - Legacy longitude replace characters".
