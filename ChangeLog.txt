@@ -1,5 +1,6 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2014-10-10 Moved query "Update georeferences for null decLatLong" to follow queries "Update geodeticDatum to not recorded" and "Update georeferenceVerificationStatus to unverified" in macro "Do DwC2 Migration".
 2014-10-03 Added query "Update coordinateUncertaintyInMeters for precision".
 2014-10-03 Added Report exports for Eggs and/or Nests to the macro "Do DwC2 Migration".
 2014-09-23 Added query "Update DecLatLong for precision".
