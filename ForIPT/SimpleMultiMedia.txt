@@ -1,0 +1,2 @@
+occurrenceID	type	format	identifier	references	title	description	created	creator	contributor	publisher	audience	source	license	rightsHolder
+occurrenceID	type	format	identifier	references	title	description	2014-10-10	creator	contributor	publisher	audience	source	license	rightsHolder
