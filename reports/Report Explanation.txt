@@ -1,12 +1,14 @@
 During processing, the VertNet toolkit ("migrator") transforms data from it's original fields and their content into fields, formats, and vocabularies consistent with the Darwin Core and with the purpose of facilitating discovery. In many cases, the changes made during processing reveal data that could be improved at the source. Following is a list of reports generated during processing for VertNet showing how to interpret their contents. The square brackets indicate that the name of the data set to which the report applies, such as "Birds", "Fish", "Fossils", "Herps", "Mammals", or "Verts".
 
 Report - [Collection] - Day out of Range.csv
-  This reports contains a list of records for which the day field is less than 1 or greater than the number of days in the given month. The columns in this report are:
+  This reports contains a list of records for which the day field is less than 1 or greater than the number of days in the given month or month and year. The columns in this report are:
     catalogNumber Field - the catalogNumber for the record.
 	day - the value of the day field that is outside the valid range.
+	month - the value of the month field that helps to determine if the day value is out of range.
+	year - the value of the year field that helps to determine if the day value is out of range (for leap years, for example).
 	
 Report - [Collection] - duplicate catalogNumber.csv
-  This reports contains a list of catalog numbers that appear more than once within a given collection. If the catalogNumber is meant to uniquely identify records within a collection of data set, then duplicates are errors and should be resolved at the source. The columns in this report are:
+  This reports contains a list of catalog numbers that appear more than once within a given collection. If the catalogNumber is meant to uniquely identify records within a collection or data set, then duplicates are errors and should be resolved at the source. The columns in this report are:
     catalogNumber Field - the duplicated catalogNumber.
 	NumberOfDups - the number of records that have the given catalogNumber.
 	
@@ -23,7 +25,10 @@ Report - [Collection] - IndeterminateGeography.csv
     verbatimIsland - the contents of the original data that were mapped to the Darwin Core island field for the given catalogNumber.
     error - a description of why the geography of the record is indeterminate, ambiguous, or self-inconsistent.
   
-Report - [Collection] - Month out of Range.csv
+Report - [Collection] - missing catalogNumber.csv
+  This reports contains a list of complete source records that do not have a record identifier that can serve as a persistent catalog number. If the catalogNumber is meant to uniquely identify records within a collection or data set, then missing catalog numbers are errors and should be resolved at the source. Records without catalog numbers are not included in the processed results. The columns in this report are the same as in the source data set.
+
+	Report - [Collection] - Month out of Range.csv
   This reports contains a list of records for which the month field is less than 1 or greater than 12. The columns in this report are:
     catalogNumber Field - the catalogNumber for the record.
 	month - the value of the month field that is outside the valid range.
