@@ -87,6 +87,9 @@ REM sh PurgeNonprintingCharacters.sh ForIPT\SimpleDwCForVertNet.csv
 REM Run NewLine reporting script again after purging new lines and carriage returns in data
 gawk -f NewLineIssues.awk ForIPT\SimpleDwCForVertNet.csv>ForIPT\NewLineIssuesAfterCRLFRemoval.txt
 
+REM Remove the working copy of the Aggregator
+mv workspace\Aggregator.mdb bkp\Aggregator.mdb
+
 REM Archive the resulting SimpleDwCForVertNet file with gzip.
 REM cd ForIPT
 REM gzip SimpleDwCForVertNet.csv

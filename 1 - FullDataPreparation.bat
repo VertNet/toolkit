@@ -92,8 +92,11 @@ if not %processingdir%==%sourcedir% (
 REM Run the migrators for distinct collections or datasets.
 CALL "1a - RunMigrators.bat"
 
+REM Run the migrators for distinct collections or datasets.
+CALL "1b - CleanMigratedTables.bat"
+
 REM Aggregate data sources for publishing. 
-CALL "1b - RunAggregators.bat"
+CALL "1c - RunAggregators.bat"
 
 REM If the source and processing directories are the same, do not copy back the results
 REM and do not remove the processing directory and go directly to the finish line.

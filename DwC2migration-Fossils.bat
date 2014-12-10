@@ -25,8 +25,8 @@ REM
 REM The Access databases created by this process replace the ones
 REM created in a previous run.
 
-REM This script assumes one of two locations for Microsoft Office. Chance the value
-REM of accessexe if it is not in one of these locations.
+REM This script assumes one of The following locations for Microsoft Office. 
+REM Change the value of accessexe if it is not in one of these locations.
 set accessexe="C:\Program Files\Microsoft Office\OFFICE11\MSACCESS.EXE"
 if exist %accessexe% goto accessfound
 set accessexe="C:\Program Files (x86)\Microsoft Office\OFFICE11\MSACCESS.EXE"

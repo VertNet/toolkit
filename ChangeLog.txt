@@ -1,5 +1,19 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2014-11-28 SimpleDwC-verbatim is now supposed to be filled qith only those fields that can be mapped directly from the original. All other fields go through the Legacy table processing using queries such as "LegacyCoordinates from Specimens", "LegacyCoordinateUncertainties from Specimens", etc. Queries that are likely to require customization are marked in the macro comment with an asterix (*) - for example, "*SimpleDwC-verbatim from Specimens"
+2014-11-18 Reordered processing, added reports, added diffs for new DwC terms.
+2014-11-18 Added query "Source" to filter records from "Occurrence" when populating table "Specimens". This query is what gets used by the query "Append Source Data to Specimens".
+2014-11-18 Changed linked table "Source" to "Occurrence.
+2014-11-17 Changed "report - missing catalogNumber" to be based on catalogNumber from Specimens table.
+2014-11-17 Changed structure and processing of LegacyData table to several distinct legacy tables for distinct aspects of the data (coordinates, coordinate uncertainties, dates, depths, elevations, scientific names.
+2014-11-17 Corrected query "Update modified from previous migration" to change records where mmodified is null in origin to be the value of modified in the previous migration.
+2014-11-17 Changed query "Append new Geography to LookupGeography" to add higherGeography string based on verbatim values of Darwin Core fields in preferred order and seperator (continent | country | stateProvince | county | municipality | waterBody | islandGroup | island).
+2014-11-17 Changed query "Update higherClassification with verbatim taxonomy" to use the preferred seperator " | ".
+2014-11-17 Changed query "Prepend verbatim geography to verbatimLocality" to map from Specimens table using preferred order and seperator (continent | country | stateProvince | county | municipality | waterBody | islandGroup | island). The query "Update higherGeography" still concatenates in the order and seperator (continent;country;stateProvince;county;island;islandGroup;waterBody;municipality) used in the key field in the linked table LookupGeography. Don't change this.
+2014-11-17 Changed SpecimensTemplate and Specimens to have a primary key called processingID meant to be used only within the migrator to link records to the original Source imported to Specimens.
+2014-11-17 Changed Source model to link to an occurrence.txt file of a Darwin Core archive output from Simple Darwin Core version 2013-10-22 (previous version).
+2014-11-17 Changed structure of SimpleDwC, SimpleDwC-verbatim, and SimpleDwCTemplate to include new fields and change rights for license.
+2014-11-17 Major overhaul to accomodate Darwin Core version 2014-11-08. Re-ordered all processing. See above for other changes. Upgrades from old versions should be redone from scratch as this is migrator version is too different to just amend an old one.
 2014-11-06 Added the missing queries 'diff-decimalLatitudeCount" and "diff-decimalLatitudeCount" and enabled them in the macro "Do DwC2 Migration".
 2014-10-10 Moved query "Update georeferences for null decLatLong" to follow queries "Update geodeticDatum to not recorded" and "Update georeferenceVerificationStatus to unverified" in macro "Do DwC2 Migration".
 2014-10-03 Added query "Update coordinateUncertaintyInMeters for precision".
