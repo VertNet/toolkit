@@ -18,7 +18,9 @@ For a new migrator installation:
 16) Edit and enable the queries called "LegacyXXX from Specimens" (where XXXX is "Coordinates", "CoordinateUncertainty", "Dates", "Depths", "Elevations", or "ScientificNames") to populate Legacy Data tables with fields that don't fit directly into SimpleDwC-verbatim or for fields that require special processing (multi-step or joins to other tables) to transform the original data into the recommended Darwin Core fields and formats.
 17) Add, customize and enable queries for dynamicProperties if necessary. If any dynamicProperties are enabled, be sure to enable the query "*Update dynamicProperties to close". This puts the closing bracket ({) on the JSON content in the dynamicProperties field.
 18) Edit and enable the query "Update Preparations for Tissues" to make preparations include tissue information if it does not already.
-19) Enable the appropriate reports based on the scope of the resource (Aves, EggsNests, Fish, Fossils, Herps, Mammals, Verts).
+19) Enable the appropriate reports based on the scope of the resource (Aves, EggsNests, Fish, Fossils, Herps, Mammals, Verts). Check the following queries to be sure they are mapped correctly before proceeding:
+"Report - missing catalogNumber"
+{List here any others found}
 20) Copy the latest Vocabulary databases (VertNetVocabularies.mdb and VertNetVocabulariesManager.mdb) from Dropbox\Vocabularies to .\source. Make sure there is no Vocabulary editing in progress elsewhere. If there is, wait for that to be done and get the copies from Dropbox afterwards.
 21) Set the correct migrators to be run for the institution in the script "1a - RunMigrators.bat".
 22) Set the correct migrators to be aggregated in the macro "Aggregate and Export" in templates\AggregatorTemple.mdb.
