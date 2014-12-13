@@ -35,6 +35,7 @@ For a new migrator installation:
 31) Edit the open vocabularies to map to standard versions of the terms. Some of these may be deferred, such as preparations and lifestage, which are incredibly diverse. Try especially to resolve Classifications and Geography (USA for sure).
 32) Run the script "1a - RunMigrators.bat" to make a copy of the SimpleDwC table with vocabulary lookups included.
 33) Run the script "1b - RunAggregators.bat" to make a final migration data set, error reports, and data quality assessments.
-34) Copy the error report files called "Report -*" in the source file to the appropriate Dropbox folder of the data publisher. Alert the publisher about these reports so they can improve their data at the source, if desired.
-35) Zip and the copy the SimpleDwCForVertNet.csv file to Dropbox for review by the data publisher.
-36) Upload the file SimpleDwCForVertNet.zip to the resource on the IPT when it is authorized by the data publisher.
+34) Compare the counts on output to SimpleDwCForVertNet.csv with the expecte number from the processed collection SimpleDwC tables. Resolve any discrepencies.
+35) Copy the error report files called "Report -*" in the source file to the appropriate Dropbox folder of the data publisher. Alert the publisher about these reports so they can improve their data at the source, if desired.
+36) Zip and the copy the SimpleDwCForVertNet.csv file to Dropbox for review by the data publisher.
+37) Upload the file SimpleDwCForVertNet.zip to the resource on the IPT when it is authorized by the data publisher.
