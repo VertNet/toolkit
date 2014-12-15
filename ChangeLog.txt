@@ -1,5 +1,7 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2014-12-15 Added query "Update Occurrence - occurrenceStatus" and removed expression to build occurrenceStatus from queries "SimpleDwC-verbatim from Specimens" and "SimpleDwC-verbatim from Specimens - common".
+2014-12-15 Added query "Update Occurrence - establishmentMeans" and removed expression to build establishmentMeans from queries "SimpleDwC-verbatim from Specimens" and "SimpleDwC-verbatim from Specimens - common".
 2014-12-15 Added query "Update occurrenceID in SimpleDwC" to set occurrenceIDs if they do not already exist in the source.
 2014-12-13 Corrected queries "LegacyDates processing 10", "LegacyDates processing 11" and "LegacyDates processing 15", which set beginday, endday, and day to null for dates on 31 August.
 2014-11-28 SimpleDwC-verbatim is now supposed to be filled with only those fields that can be mapped directly from the original. All other fields go through the Legacy table processing using queries such as "LegacyCoordinates from Specimens", "LegacyCoordinateUncertainties from Specimens", etc. Queries that are likely to require customization are marked in the macro comment with an asterix (*) - for example, "*SimpleDwC-verbatim from Specimens"
