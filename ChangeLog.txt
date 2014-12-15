@@ -1,5 +1,6 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2014-12-15 Added query "Update Location - non-printing LocationRemarks".
 2014-12-15 Added query "Update Occurrence - occurrenceStatus" and removed expression to build occurrenceStatus from queries "SimpleDwC-verbatim from Specimens" and "SimpleDwC-verbatim from Specimens - common".
 2014-12-15 Added query "Update Occurrence - establishmentMeans" and removed expression to build establishmentMeans from queries "SimpleDwC-verbatim from Specimens" and "SimpleDwC-verbatim from Specimens - common".
 2014-12-15 Added query "Update occurrenceID in SimpleDwC" to set occurrenceIDs if they do not already exist in the source.
