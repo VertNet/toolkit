@@ -1,5 +1,7 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2014-12-15 Corrected query "Report - day out of range" so that it does not report day out of range for dates on 31 August.
+2014-12-15 Corrected the queries "Legacy coordinatePrecision numeric", "LegacyCoordinateUncertainties numeric", "processingID	institutionCode	collectionCode	coordinatePrecision	error", "Report - coordinateUncertainties not numeric".
 2014-12-15 Added query "Update Location - non-printing LocationRemarks".
 2014-12-15 Added query "Update Occurrence - occurrenceStatus" and removed expression to build occurrenceStatus from queries "SimpleDwC-verbatim from Specimens" and "SimpleDwC-verbatim from Specimens - common".
 2014-12-15 Added query "Update Occurrence - establishmentMeans" and removed expression to build establishmentMeans from queries "SimpleDwC-verbatim from Specimens" and "SimpleDwC-verbatim from Specimens - common".
