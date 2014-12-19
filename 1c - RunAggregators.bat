@@ -74,8 +74,12 @@ sh PurgeNonprintingCharacters.sh ForIPT\partac
 sh PurgeNonprintingCharacters.sh ForIPT\partad
 sh PurgeNonprintingCharacters.sh ForIPT\partae
 sh PurgeNonprintingCharacters.sh ForIPT\partaf
+sh PurgeNonprintingCharacters.sh ForIPT\partag
+sh PurgeNonprintingCharacters.sh ForIPT\partah
+sh PurgeNonprintingCharacters.sh ForIPT\partai
+sh PurgeNonprintingCharacters.sh ForIPT\partaj
 cd ForIPT
-cat partaa partab partac partad partae partaf > SimpleDwCForVertNet.csv
+cat partaa partab partac partad partae partaf partag partah partai partaj> SimpleDwCForVertNet.csv
 REM cat partaa > SimpleDwCForVertNet.csv
 rm parta*
 diff SimpleDwCForVertNetPrepurge.csv SimpleDwCForVertNet.csv > purge_diffs.txt
