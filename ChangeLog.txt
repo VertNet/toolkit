@@ -1,7 +1,7 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2014-12-19 Added template queries "Update Occurrence - preparations for Part X" that facilitate the construction of the preparations field if the original has preparations in distinct fields.
 2014-12-18 Added query "Update references in SimpleDwC" to construct a reference to the record as it will appear in the VertNet portal if the record does not already have a references value.
-2014-12-16 Added query "Update Occurrence - nomenclaturalCode".
 2014-12-16 Corrected queries "Update Occurrence - non-printing occurrenceRemarks", "Update Organism - non-printing organismRemarks", "Update Event - non-printing EventRemarks", "Update Location - non-printing LocationRemarks".
 2014-12-15 Corrected query "Report - day out of range" so that it does not report day out of range for dates on 31 August.
 2014-12-15 Corrected the queries "Legacy coordinatePrecision numeric", "LegacyCoordinateUncertainties numeric", "processingID	institutionCode	collectionCode	coordinatePrecision	error", "Report - coordinateUncertainties not numeric".
