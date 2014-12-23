@@ -1,5 +1,7 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2014-12-23 Reduced all reports to one series in the migration macro. Added renaming reports by collection type to the scripts "DwC2migration-[type].bat".
+2014-12-23 Updated the query "Update references in SimpleDwC" to match the slugify function in the VertNet indexer under most circumstances. Does not account for accents as slugify does. Should not be a problem for migrators.
 2014-12-19 Increased the number of split files to 10 instead of 6 to accomodate files up to 1M records when running script "1c - RunAggregators.bat".
 2014-12-19 Corrected query "Update from LegacyElevations" so that it populates min and max elevationInMeters rather than min and max depthInMeters.
 2014-12-19 Added template queries "Update Occurrence - preparations for Part X" that facilitate the construction of the preparations field if the original has preparations in distinct fields.

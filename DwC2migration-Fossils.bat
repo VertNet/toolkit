@@ -55,4 +55,31 @@ del workspace\FossilsDwC2.mdb
 REM move the new data source into the root data provider folder.
 move workspace\tempFossils.mdb workspace\FossilsDwC2.mdb
 
+move "reports\Report - indeterminate Geography.csv"              "reports\Report - Fossils - indeterminate Geography.csv"
+move "reports\Report - coordinatePrecision not numeric.csv"      "reports\Report - Fossils - coordinatePrecision not numeric.csv"
+move "reports\Report - coordinatePrecision out of Range.csv"     "reports\Report - Fossils - coordinatePrecision out of Range.csv"
+move "reports\Report - coordinateUncertainties not numeric.csv"  "reports\Report - Fossils - coordinateUncertainties not numeric.csv"
+move "reports\Report - coordinateUncertainties out of range.csv" "reports\Report - Fossils - coordinateUncertainties out of range.csv"
+move "reports\Report - Day out of range.csv"                     "reports\Report - Fossils - Day out of range.csv"
+move "reports\Report - decimalLatLong both 0.csv"                "reports\Report - Fossils - decimalLatLong both 0.csv"
+move "reports\Report - decimalLatLong not numeric.csv"           "reports\Report - Fossils - decimalLatLong not numeric.csv"
+move "reports\Report - decimalLatLong out of range.csv"          "reports\Report - Fossils - decimalLatLong out of range.csv"
+move "reports\Report - duplicate catalogNumber.csv"              "reports\Report - Fossils - duplicate catalogNumber.csv"
+move "reports\Report - missing catalogNumber.csv"                "reports\Report - Fossils - missing catalogNumber.csv"
+move "reports\Report - missing coordinate.csv"                   "reports\Report - Fossils - missing coordinate.csv"
+move "reports\Report - Month out of range.csv"                   "reports\Report - Fossils - Month out of range.csv"
+move "reports\Report - non-standard Continent.csv"               "reports\Report - Fossils - non-standard Continent.csv"
+move "reports\Report - non-standard Country.csv"                 "reports\Report - Fossils - non-standard Country.csv"
+move "reports\Report - non-standard County.csv"                  "reports\Report - Fossils - non-standard County.csv"
+move "reports\Report - non-standard Family.csv"                  "reports\Report - Fossils - non-standard Family.csv"
+move "reports\Report - non-standard Genus.csv"                   "reports\Report - Fossils - non-standard Genus.csv"
+move "reports\Report - non-standard Island.csv"                  "reports\Report - Fossils - non-standard Island.csv"
+move "reports\Report - non-standard IslandGroup.csv"             "reports\Report - Fossils - non-standard IslandGroup.csv"
+move "reports\Report - non-standard Municipality.csv"            "reports\Report - Fossils - non-standard Municipality.csv"
+move "reports\Report - non-standard Order.csv"                   "reports\Report - Fossils - non-standard Order.csv"
+move "reports\Report - non-standard StateProvince.csv"           "reports\Report - Fossils - non-standard StateProvince.csv"
+move "reports\Report - non-standard WaterBody.csv"               "reports\Report - Fossils - non-standard WaterBody.csv"
+move "reports\Report - not higherGeography.csv"                  "reports\Report - Fossils - not higherGeography.csv"
+move "reports\Report - Year out of range.csv"                    "reports\Report - Fossils - Year out of range.csv"
+
 :end

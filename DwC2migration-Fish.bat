@@ -55,4 +55,31 @@ del workspace\FishDwC2.mdb
 REM move the new data source into the root data provider folder.
 move workspace\tempFish.mdb workspace\FishDwC2.mdb
 
+move "reports\Report - indeterminate Geography.csv"              "reports\Report - Fish - indeterminate Geography.csv"
+move "reports\Report - coordinatePrecision not numeric.csv"      "reports\Report - Fish - coordinatePrecision not numeric.csv"
+move "reports\Report - coordinatePrecision out of Range.csv"     "reports\Report - Fish - coordinatePrecision out of Range.csv"
+move "reports\Report - coordinateUncertainties not numeric.csv"  "reports\Report - Fish - coordinateUncertainties not numeric.csv"
+move "reports\Report - coordinateUncertainties out of range.csv" "reports\Report - Fish - coordinateUncertainties out of range.csv"
+move "reports\Report - Day out of range.csv"                     "reports\Report - Fish - Day out of range.csv"
+move "reports\Report - decimalLatLong both 0.csv"                "reports\Report - Fish - decimalLatLong both 0.csv"
+move "reports\Report - decimalLatLong not numeric.csv"           "reports\Report - Fish - decimalLatLong not numeric.csv"
+move "reports\Report - decimalLatLong out of range.csv"          "reports\Report - Fish - decimalLatLong out of range.csv"
+move "reports\Report - duplicate catalogNumber.csv"              "reports\Report - Fish - duplicate catalogNumber.csv"
+move "reports\Report - missing catalogNumber.csv"                "reports\Report - Fish - missing catalogNumber.csv"
+move "reports\Report - missing coordinate.csv"                   "reports\Report - Fish - missing coordinate.csv"
+move "reports\Report - Month out of range.csv"                   "reports\Report - Fish - Month out of range.csv"
+move "reports\Report - non-standard Continent.csv"               "reports\Report - Fish - non-standard Continent.csv"
+move "reports\Report - non-standard Country.csv"                 "reports\Report - Fish - non-standard Country.csv"
+move "reports\Report - non-standard County.csv"                  "reports\Report - Fish - non-standard County.csv"
+move "reports\Report - non-standard Family.csv"                  "reports\Report - Fish - non-standard Family.csv"
+move "reports\Report - non-standard Genus.csv"                   "reports\Report - Fish - non-standard Genus.csv"
+move "reports\Report - non-standard Island.csv"                  "reports\Report - Fish - non-standard Island.csv"
+move "reports\Report - non-standard IslandGroup.csv"             "reports\Report - Fish - non-standard IslandGroup.csv"
+move "reports\Report - non-standard Municipality.csv"            "reports\Report - Fish - non-standard Municipality.csv"
+move "reports\Report - non-standard Order.csv"                   "reports\Report - Fish - non-standard Order.csv"
+move "reports\Report - non-standard StateProvince.csv"           "reports\Report - Fish - non-standard StateProvince.csv"
+move "reports\Report - non-standard WaterBody.csv"               "reports\Report - Fish - non-standard WaterBody.csv"
+move "reports\Report - not higherGeography.csv"                  "reports\Report - Fish - not higherGeography.csv"
+move "reports\Report - Year out of range.csv"                    "reports\Report - Fish - Year out of range.csv"
+
 :end

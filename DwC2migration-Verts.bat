@@ -56,4 +56,31 @@ del workspace\VertsDwC2.mdb
 REM move the new data source into the root data provider folder.
 move workspace\tempVerts.mdb workspace\VertsDwC2.mdb
 
+move "reports\Report - indeterminate Geography.csv"              "reports\Report - Verts - indeterminate Geography.csv"
+move "reports\Report - coordinatePrecision not numeric.csv"      "reports\Report - Verts - coordinatePrecision not numeric.csv"
+move "reports\Report - coordinatePrecision out of Range.csv"     "reports\Report - Verts - coordinatePrecision out of Range.csv"
+move "reports\Report - coordinateUncertainties not numeric.csv"  "reports\Report - Verts - coordinateUncertainties not numeric.csv"
+move "reports\Report - coordinateUncertainties out of range.csv" "reports\Report - Verts - coordinateUncertainties out of range.csv"
+move "reports\Report - Day out of range.csv"                     "reports\Report - Verts - Day out of range.csv"
+move "reports\Report - decimalLatLong both 0.csv"                "reports\Report - Verts - decimalLatLong both 0.csv"
+move "reports\Report - decimalLatLong not numeric.csv"           "reports\Report - Verts - decimalLatLong not numeric.csv"
+move "reports\Report - decimalLatLong out of range.csv"          "reports\Report - Verts - decimalLatLong out of range.csv"
+move "reports\Report - duplicate catalogNumber.csv"              "reports\Report - Verts - duplicate catalogNumber.csv"
+move "reports\Report - missing catalogNumber.csv"                "reports\Report - Verts - missing catalogNumber.csv"
+move "reports\Report - missing coordinate.csv"                   "reports\Report - Verts - missing coordinate.csv"
+move "reports\Report - Month out of range.csv"                   "reports\Report - Verts - Month out of range.csv"
+move "reports\Report - non-standard Continent.csv"               "reports\Report - Verts - non-standard Continent.csv"
+move "reports\Report - non-standard Country.csv"                 "reports\Report - Verts - non-standard Country.csv"
+move "reports\Report - non-standard County.csv"                  "reports\Report - Verts - non-standard County.csv"
+move "reports\Report - non-standard Family.csv"                  "reports\Report - Verts - non-standard Family.csv"
+move "reports\Report - non-standard Genus.csv"                   "reports\Report - Verts - non-standard Genus.csv"
+move "reports\Report - non-standard Island.csv"                  "reports\Report - Verts - non-standard Island.csv"
+move "reports\Report - non-standard IslandGroup.csv"             "reports\Report - Verts - non-standard IslandGroup.csv"
+move "reports\Report - non-standard Municipality.csv"            "reports\Report - Verts - non-standard Municipality.csv"
+move "reports\Report - non-standard Order.csv"                   "reports\Report - Verts - non-standard Order.csv"
+move "reports\Report - non-standard StateProvince.csv"           "reports\Report - Verts - non-standard StateProvince.csv"
+move "reports\Report - non-standard WaterBody.csv"               "reports\Report - Verts - non-standard WaterBody.csv"
+move "reports\Report - not higherGeography.csv"                  "reports\Report - Verts - not higherGeography.csv"
+move "reports\Report - Year out of range.csv"                    "reports\Report - Verts - Year out of range.csv"
+
 :end

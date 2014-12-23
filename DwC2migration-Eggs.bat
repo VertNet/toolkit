@@ -55,4 +55,31 @@ del workspace\EggsDwC2.mdb
 REM move the new data source into the root data provider folder.
 move workspace\tempEggs.mdb workspace\EggsDwC2.mdb
 
+move "reports\Report - indeterminate Geography.csv"              "reports\Report - Eggs-Nests - indeterminate Geography.csv"
+move "reports\Report - coordinatePrecision not numeric.csv"      "reports\Report - Eggs-Nests - coordinatePrecision not numeric.csv"
+move "reports\Report - coordinatePrecision out of Range.csv"     "reports\Report - Eggs-Nests - coordinatePrecision out of Range.csv"
+move "reports\Report - coordinateUncertainties not numeric.csv"  "reports\Report - Eggs-Nests - coordinateUncertainties not numeric.csv"
+move "reports\Report - coordinateUncertainties out of range.csv" "reports\Report - Eggs-Nests - coordinateUncertainties out of range.csv"
+move "reports\Report - Day out of range.csv"                     "reports\Report - Eggs-Nests - Day out of range.csv"
+move "reports\Report - decimalLatLong both 0.csv"                "reports\Report - Eggs-Nests - decimalLatLong both 0.csv"
+move "reports\Report - decimalLatLong not numeric.csv"           "reports\Report - Eggs-Nests - decimalLatLong not numeric.csv"
+move "reports\Report - decimalLatLong out of range.csv"          "reports\Report - Eggs-Nests - decimalLatLong out of range.csv"
+move "reports\Report - duplicate catalogNumber.csv"              "reports\Report - Eggs-Nests - duplicate catalogNumber.csv"
+move "reports\Report - missing catalogNumber.csv"                "reports\Report - Eggs-Nests - missing catalogNumber.csv"
+move "reports\Report - missing coordinate.csv"                   "reports\Report - Eggs-Nests - missing coordinate.csv"
+move "reports\Report - Month out of range.csv"                   "reports\Report - Eggs-Nests - Month out of range.csv"
+move "reports\Report - non-standard Continent.csv"               "reports\Report - Eggs-Nests - non-standard Continent.csv"
+move "reports\Report - non-standard Country.csv"                 "reports\Report - Eggs-Nests - non-standard Country.csv"
+move "reports\Report - non-standard County.csv"                  "reports\Report - Eggs-Nests - non-standard County.csv"
+move "reports\Report - non-standard Family.csv"                  "reports\Report - Eggs-Nests - non-standard Family.csv"
+move "reports\Report - non-standard Genus.csv"                   "reports\Report - Eggs-Nests - non-standard Genus.csv"
+move "reports\Report - non-standard Island.csv"                  "reports\Report - Eggs-Nests - non-standard Island.csv"
+move "reports\Report - non-standard IslandGroup.csv"             "reports\Report - Eggs-Nests - non-standard IslandGroup.csv"
+move "reports\Report - non-standard Municipality.csv"            "reports\Report - Eggs-Nests - non-standard Municipality.csv"
+move "reports\Report - non-standard Order.csv"                   "reports\Report - Eggs-Nests - non-standard Order.csv"
+move "reports\Report - non-standard StateProvince.csv"           "reports\Report - Eggs-Nests - non-standard StateProvince.csv"
+move "reports\Report - non-standard WaterBody.csv"               "reports\Report - Eggs-Nests - non-standard WaterBody.csv"
+move "reports\Report - not higherGeography.csv"                  "reports\Report - Eggs-Nests - not higherGeography.csv"
+move "reports\Report - Year out of range.csv"                    "reports\Report - Eggs-Nests - Year out of range.csv"
+
 :end
