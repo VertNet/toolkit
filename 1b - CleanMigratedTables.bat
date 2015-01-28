@@ -18,4 +18,4 @@ REM CALL Cleanup-FishDwC2.bat
 REM CALL Cleanup-FossilsDwC2.bat
 REM CALL Cleanup-HerpsDwC2.bat
 REM CALL Cleanup-MammalsDwC2.bat
-CALL Cleanup-VertsDwC2.bat
+REM CALL Cleanup-VertsDwC2.bat

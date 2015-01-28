@@ -1,5 +1,8 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2015-01-27 Amended joins in queries "Append to StatsCompleteness" and "diff-..." to use processingID instead of ID. This caused quality stats not to be catured from 31 Oct 2014 to 27 Jan 2015.
+2015-01-05 Amended query "Update dynamicProperties to close" so that it always closes.
+2014-12-24 Amended queries "Step [nn]" to better reflect the activity. Renumbered steps 24 and later. Set them to run in the macro "Do DwC2 migration".
 2014-12-24 Added query "Update Location 2 - countryCode Country Continent" to grab potentially standardized geography from vocabs even if not finished when the current countryCode is null. This will make much more of the geography standard even if it isn't fully reconciled in the LookupGeography table.
 2014-12-23 Reduced all reports to one series in the migration macro. Added renaming reports by collection type to the scripts "DwC2migration-[type].bat".
 2014-12-23 Updated the query "Update references in SimpleDwC" to match the slugify function in the VertNet indexer under most circumstances. Does not account for accents as slugify does. Should not be a problem for migrators.
