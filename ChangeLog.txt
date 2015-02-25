@@ -1,5 +1,7 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2015-02-25 Added check for "n/a" in queries "Update Taxon - specificEpithet for unknown" and "Update Taxon - infraspecificEpithet for unknown".
+2015-02-25 Changed separator in the "withold" queries from "," to " | ".
 2015-02-18 Added and amended steps in Legacy Date processing to account for verbatimEventDates of that have IsDate() true but have no day (e.g., Jun-48) and for decades (e.g., 1980s). Upgrading from the version 2015-01-27 should replace the entire LegacyDates processing section.
 2015-01-27 Amended joins in queries "Append to StatsCompleteness" and "diff-..." to use processingID instead of ID. This caused quality stats not to be catured from 31 Oct 2014 to 27 Jan 2015.
 2015-01-05 Amended query "Update dynamicProperties to close" so that it always closes.
