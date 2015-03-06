@@ -1,5 +1,6 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2015-03-05 Corrected query "Append new Geography to LookupGeography", which wrote the municipality data into the municipality field in the LookupGeography table rather than writing it into the verbatimMunicipality field. Relevant error to any collection with municipality in the original data.
 2015-02-25 Added check for "n/a" in queries "Update Taxon - specificEpithet for unknown" and "Update Taxon - infraspecificEpithet for unknown".
 2015-02-25 Changed separator in the "withold" queries from "," to " | ".
 2015-02-18 Added and amended steps in Legacy Date processing to account for verbatimEventDates of that have IsDate() true but have no day (e.g., Jun-48) and for decades (e.g., 1980s). Upgrading from the version 2015-01-27 should replace the entire LegacyDates processing section.
