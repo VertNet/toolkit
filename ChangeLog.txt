@@ -1,5 +1,6 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2015-03-19 Made corrections to the file "README - MigratorPrepSteps.txt".
 2015-03-05 Corrected query "Append new Geography to LookupGeography", which wrote the municipality data into the municipality field in the LookupGeography table rather than writing it into the verbatimMunicipality field. Relevant error to any collection with municipality in the original data.
 2015-02-25 Added check for "n/a" in queries "Update Taxon - specificEpithet for unknown" and "Update Taxon - infraspecificEpithet for unknown".
 2015-02-25 Changed separator in the "withold" queries from "," to " | ".
