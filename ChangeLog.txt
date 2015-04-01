@@ -1,5 +1,7 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2014-04-01 Added query "LegacyDates processing 02b" to process verbatimDates of the form YYYYMMDD. Updated the macro "LegacyDates Test" to include this query and added two examples to teh table "LegacyDatesTest".
+2015-04-01 Changed query "LegacyDates processing 02" to let through verbatimDates that are numeric and only 4 digits rather than any numeric.
 2015-03-19 Made corrections to the file "README - MigratorPrepSteps.txt".
 2015-03-05 Corrected query "Append new Geography to LookupGeography", which wrote the municipality data into the municipality field in the LookupGeography table rather than writing it into the verbatimMunicipality field. Relevant error to any collection with municipality in the original data.
 2015-02-25 Added check for "n/a" in queries "Update Taxon - specificEpithet for unknown" and "Update Taxon - infraspecificEpithet for unknown".
