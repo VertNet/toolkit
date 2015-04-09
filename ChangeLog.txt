@@ -1,5 +1,6 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2015-04-09 Amended macro "Do DwC2 migration" to turn on append lookup months inside the LegacyDates processing series.
 2015-04-08 Modified the query "LegacyDates processing 02a" to trim white space from the calculated LatestDateCollected.
 2015-04-08 Added queries "LegacyDates processing 02c" and "LegacyDates processing 02d" to accomodate verbatimEventDates of the form XX XXX XXXX.
 2015-04-06 Replace generic queries "Update Occurrence - preparations for Part X" with queries for specific part names. Doesn't change the functionality of any existing migrators, just makes it easier to create new ones.
