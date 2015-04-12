@@ -12,6 +12,7 @@ REM This script assumes that the assumptions in all of its called scripts have
 REM been met.
 
 REM Run the migrators.
+REM CALL Cleanup-AudioDwC2.bat
 REM CALL Cleanup-AvesDwC2.bat
 REM CALL Cleanup-EggsDwC2.bat
 REM CALL Cleanup-FishDwC2.bat
