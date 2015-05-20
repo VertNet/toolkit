@@ -15,7 +15,9 @@ REM Run the migrators.
 REM CALL Cleanup-AudioDwC2.bat
 REM CALL Cleanup-AvesDwC2.bat
 REM CALL Cleanup-EggsDwC2.bat
+REM CALL Cleanup-EntDwC2.bat
 REM CALL Cleanup-FishDwC2.bat
+REM CALL Cleanup-FungiDwC2.bat
 REM CALL Cleanup-FossilsDwC2.bat
 REM CALL Cleanup-HerpsDwC2.bat
 REM CALL Cleanup-MammalsDwC2.bat
