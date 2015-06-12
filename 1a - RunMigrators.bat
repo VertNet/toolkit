@@ -15,10 +15,10 @@ REM Run the migrators.
 REM CALL DwC2migration-Audio.bat
 REM CALL DwC2migration-Aves.bat
 REM CALL DwC2migration-Eggs.bat
-CALL DwC2migration-Ent.bat
+REM CALL DwC2migration-Ent.bat
 REM CALL DwC2migration-Fish.bat
 REM CALL DwC2migration-Fossils.bat
 REM CALL DwC2migration-Fungi.bat
 REM CALL DwC2migration-Herps.bat
 REM CALL DwC2migration-Mammals.bat
-REM CALL DwC2migration-Verts.bat
+CALL DwC2migration-Verts.bat
