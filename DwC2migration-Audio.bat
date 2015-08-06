@@ -67,6 +67,7 @@ move "reports\Report - Day out of range.csv"                     "reports\Report
 move "reports\Report - decimalLatLong both 0.csv"                "reports\Report - Audio - decimalLatLong both 0.csv"
 move "reports\Report - decimalLatLong not numeric.csv"           "reports\Report - Audio - decimalLatLong not numeric.csv"
 move "reports\Report - decimalLatLong out of range.csv"          "reports\Report - Audio - decimalLatLong out of range.csv"
+move "reports\Report - duplicate occurrenceIDs.csv"              "reports\Report - Audio - duplicate occurrenceIDs.csv"
 move "reports\Report - duplicate catalogNumber.csv"              "reports\Report - Audio - duplicate catalogNumber.csv"
 move "reports\Report - missing catalogNumber.csv"                "reports\Report - Audio - missing catalogNumber.csv"
 move "reports\Report - missing coordinate.csv"                   "reports\Report - Audio - missing coordinate.csv"

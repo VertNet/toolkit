@@ -52,6 +52,11 @@ Report - [Collection] - duplicate catalogNumber.csv
 	catalogNumber - the duplicated catalogNumber.
 	NumberOfDups - the number of records that have the given catalogNumber.
 
+Report - [Collection] - duplicate occurrenceIDs.csv
+  This reports contains a list of occurrenceIDs that appear more than once within a data set. An occurrenceID is meant to uniquely identify an Occurrence record globally. Duplicates are detected with a data set and should be resolved at the source. The columns in this report are:
+	occurrenceID - the duplicated occurrenceID.
+	NumberOfDups - the number of records that have the given occurrenceID.
+
 Report - [Collection] - indeterminate Geography.csv
   This report contains a list of records for which the verbatim original contents of the geography result in an ambiguity that cannot be resolved with the information in the geographic fields alone. During data processing, VertNet attempts to provide standardized geography using the Darwin Core geographic terms (continent, country, stateProvince, county, municipality, island, islandGroup, waterBody) based on the originally provided higher geographic data - fields less specific than the locality field (http://rs.tdwg.org/dwc/terms/index.htm#locality). If the original geography could be interpreted as more than one distinct region, or if the original geography is self-inconsistent, the record will appear in the report. The columns in this report are:
 	collectionCode - the code for the collection the record belongs in.
