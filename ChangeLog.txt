@@ -1,5 +1,6 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2015-08-06 Added processing for duplicate occurrenceIDs.
 2015-06-12 Added common path to Access 2015 executable in the .bat scripts.
 2015-04-23 Amended query "Update modified to yyyy-mm-dd" so that it only affects values where the criterion IsDate(modified)=True is satisfied.
 2015-04-11 Added scripts, databases, and macros for Audio data sets.
