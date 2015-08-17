@@ -1,4 +1,4 @@
-# VertNet Darwin Core Data Migrator
+# VertNet Darwin Core Data Migrator Toolkit
 
 
 Scripts and databases to migrate source data to Darwin Core ready for publication via IPT.
