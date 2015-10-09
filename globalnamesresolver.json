@@ -1,0 +1,61 @@
+# The following script can be used in OpenRefine after creating a project with one 
+# column of genus names. The script uses the Global Names API to resolve the genera 
+# based on the source_ids selected. 1=Catalogue of Life, 172=Paleobiology Database, 
+# 8=Interim Register of Marine and Nonmarine Genera, etc. as found at 
+# http://resolver.globalnames.org/data_sources.
+[
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Column 1 to verbatimGenus",
+    "oldColumnName": "Column 1",
+    "newColumnName": "verbatimGenus"
+  },
+  {
+    "op": "core/column-addition-by-fetching-urls",
+    "description": "Create column resolverResults at index 1 by fetching URLs based on column verbatimGenus using expression grel:\"http://resolver.globalnames.org/name_resolvers.json?names=\"+escape(cells[\"verbatimGenus\"].value,\"url\")+\"&data_source_ids=8&with_context=false&best_match_only=false&resolve_once=true\"",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "newColumnName": "resolverResults",
+    "columnInsertIndex": 1,
+    "baseColumnName": "verbatimGenus",
+    "urlExpression": "grel:\"http://resolver.globalnames.org/name_resolvers.json?names=\"+escape(cells[\"verbatimGenus\"].value,\"url\")+\"&data_source_ids=8&with_context=false&best_match_only=false&resolve_once=true\"",
+    "onError": "set-to-blank",
+    "delay": 100
+  },
+  {
+    "op": "core/column-addition",
+    "description": "Create column classification at index 2 based on column resolverResults using expression grel:value.parseJson(\" { 'a' : 1 } \").get(\"data\")[0].get(\"results\")[0].get(\"classification_path\")",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "newColumnName": "classification",
+    "columnInsertIndex": 2,
+    "baseColumnName": "resolverResults",
+    "expression": "grel:value.parseJson(\" { 'a' : 1 } \").get(\"data\")[0].get(\"results\")[0].get(\"classification_path\")",
+    "onError": "set-to-blank"
+  },
+  {
+    "op": "core/column-move",
+    "description": "Move column classification to position 0",
+    "columnName": "classification",
+    "index": 0
+  },
+  {
+    "op": "core/column-split",
+    "description": "Split column classification by separator",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "classification",
+    "guessCellType": true,
+    "removeOriginalColumn": true,
+    "mode": "separator",
+    "separator": "|",
+    "regex": false,
+    "maxColumns": 0
+  }
+]

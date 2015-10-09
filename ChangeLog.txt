@@ -1,5 +1,6 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2015-10-09 Added script globalnamesresolver.json to be used in OpenRefine to call on the Global Names Resolver API. This is for convenience. It does not affect the migrator.
 2015-09-20 Added criterion null to query "Update Taxon 2 - scientificName" so that original scientificNames that ought to be kept (e.g, shose containing authorship) are not overwritten. 
 2015-09-05 Further changed Coordinate queries to accommodate idiosyncracies found in CM Herp data. Added query "Update Identification - dateIdentified."
 2015-09-04 Changed Legacy Coordinate queries to prioritize verbatim coordinates from processing over degrees minutes seconds based on TCWC data set. Otherwise some coordinates in verbatim latitude and longitude were lost because there where zero values in the degrees minutes seconds fields.
