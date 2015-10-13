@@ -1,5 +1,6 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2015-10-13 Added queries for additional dynamicProperties based on fields in CRCM Birds and Mammals.
 2015-10-13 Added query in Legacy Coordinate processing to translate European decimal indicator "," to ".".
 2015-10-09 Added script globalnamesresolver.json to be used in OpenRefine to call on the Global Names Resolver API. This is for convenience. It does not affect the migrator.
 2015-09-20 Added criterion null to query "Update Taxon 2 - scientificName" so that original scientificNames that ought to be kept (e.g, those containing authorship) are not overwritten. 
