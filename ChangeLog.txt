@@ -1,5 +1,6 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2015-10-21 Added queries for additional dynamicProperties based on fields in UMMZ Birds. Rearranged the order of dynamicProperty additions to alphabetical.
 2015-10-15 Added support for the Audubon Core Extension.
 2015-10-13 Added queries for additional dynamicProperties based on fields in CRCM Birds and Mammals.
 2015-10-13 Added query in Legacy Coordinate processing to translate European decimal indicator "," to ".".
