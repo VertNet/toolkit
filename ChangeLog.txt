@@ -1,6 +1,7 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
-2016-03-14 To support processing multiple media in the associatedMedia field into distinct Audubon Core records. Added tables Media and MediaTemplate. Added query qryMedia. Added Module "MediaModule".
+2016-03-14 To support providing a lookup between a deprecated occurrenceID and its replacement occurrenceID in a ResourceRelationship Extension, added tables ResourceRelationshipExtension and ResourceRelationshipExtensionTemplate. Added query "Append occurrenceIDs to ResourceRelationshipExtension". Added processing steps to the macro "Do DwC2Migration", but turned off by default.
+2016-03-14 To support processing multiple media in the associatedMedia field into distinct Audubon Core records. Added tables "Media" and "MediaTemplate". Added query "qryMedia". Added Module "MediaModule". Added processing steps to the macro "Do DwC2Migration", but turned off by default.
 2016-03-14 Changed all reports except "Report - missing catalogNumber", "Report - StatsDifferences", and "Report - StatsCompleteness" to use export specifications and to output .txt files instead of csv files.
 2016-03-14 Added an InvertsDwC2.mdb database to the workspace folder.
 2016-02-03 Major overhaul to date processing to permit eventDate as year only and to correctly process the dd MMM pattern.
