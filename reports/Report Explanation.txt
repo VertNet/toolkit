@@ -1,20 +1,20 @@
-During processing, the VertNet toolkit ("migrator") transforms data from it's original fields and their content into fields, formats, and vocabularies consistent with the Darwin Core and with the purpose of facilitating discovery. In many cases, the changes made during processing reveal data that could be improved at the source. Following is a list of reports generated during processing for VertNet showing how to interpret their contents. The square brackets indicate that the name of the data set to which the report applies, such as "Birds", "EggsNets", "Fish", "Fossils", "Herps", "Mammals", or "Verts".
+During processing, the VertNet toolkit ("migrator") transforms data from it's original fields and their content into fields, formats, and vocabularies consistent with the Darwin Core and with the purpose of facilitating discovery. In many cases, the changes made during processing reveal data that could be improved at the source. Following is a list of reports generated during processing for VertNet showing how to interpret their contents. The square brackets indicate that the name of the data set to which the report applies, such as "Audio", "Aves", "Eggs", "Ent", "Fish", "Fossils", "Fungi"", "Herps", "Inverts", "Mammals", or "Verts".
 
-Report - [Collection] - coordinateUncertainties not numeric.csv
+Report - [Collection] - coordinateUncertainties not numeric.txt
   This reports contains a list of records for which the original coordinateUncertaintyInMeters is non-numeric.
 The columns in this report are:
 	collectionCode - the code for the collection the record belongs in.
 	catalogNumber - the catalog number for the record.
 	verbatimCoordinateUncertaintyInMeters - the original value given for coordinateUncertaintyInMeters.
 
-Report - [Collection] - coordinateUncertainties out of range.csv
+Report - [Collection] - coordinateUncertainties out of range.txt
   This reports contains a list of records for which the original coordinateUncertaintyInMeters is less than 1 or greater than 20020000.
 The columns in this report are:
 	collectionCode - the code for the collection the record belongs in.
 	catalogNumber - the catalog number for the record.
 	verbatimCoordinateUncertaintyInMeters - the original value given for coordinateUncertaintyInMeters.
 
-Report - [Collection] - decimalLatLong both 0.csv
+Report - [Collection] - decimalLatLong both 0.txt
   This reports contains a list of records for which the original decimalLatitude and decimalLongitude are both 0.
 The columns in this report are:
 	collectionCode - the code for the collection the record belongs in.
@@ -22,7 +22,7 @@ The columns in this report are:
 	verbatimDecimalLatitude - the original value given for the decimalLatitude.
 	verbatimDecimalLongitude - the original value given for the decimalLongitude. 
 
-Report - [Collection] - decimalLatLong not numeric.csv
+Report - [Collection] - decimalLatLong not numeric.txt
   This reports contains a list of records for which either or both of the original decimalLatitude and decimalLongitude are non-numeric.
 The columns in this report are:
 	collectionCode - the code for the collection the record belongs in.
@@ -30,7 +30,7 @@ The columns in this report are:
 	verbatimDecimalLatitude - the original value given for the decimalLatitude.
 	verbatimDecimalLongitude - the original value given for the decimalLongitude. 
 
-Report - [Collection] - decimalLatLong out of range.csv
+Report - [Collection] - decimalLatLong out of range.txt
   This reports contains a list of records for which the orginal coordinates are numeric  decimalLatitude>90 or decimalLatitude<-90 or decimalLongitude>180 or decimalLongitude<-180.
 The columns in this report are:
 	collectionCode - the code for the collection the record belongs in.
@@ -38,7 +38,7 @@ The columns in this report are:
 	verbatimDecimalLatitude - the original value given for the decimalLatitude.
 	verbatimDecimalLongitude - the original value given for the decimalLongitude. 
 
-Report - [Collection] - day out of Range.csv
+Report - [Collection] - Day out of range.txt
   This reports contains a list of records for which the day field is less than 1 or greater than the number of days in the given month or month and year. The columns in this report are:
 	collectionCode - the code for the collection the record belongs in.
 	catalogNumber - the catalogNumber for the record.
@@ -46,18 +46,18 @@ Report - [Collection] - day out of Range.csv
 	month - the value of the month field that helps to determine if the day value is out of range.
 	year - the value of the year field that helps to determine if the day value is out of range (for leap years, for example).
 
-Report - [Collection] - duplicate catalogNumber.csv
+Report - [Collection] - duplicate catalogNumber.txt
   This reports contains a list of catalog numbers that appear more than once within a given collection. If the catalogNumber is meant to uniquely identify records within a collection or data set, then duplicates are errors and should be resolved at the source. The columns in this report are:
 	collectionCode - the code for the collection the record belongs in.
 	catalogNumber - the duplicated catalogNumber.
 	NumberOfDups - the number of records that have the given catalogNumber.
 
-Report - [Collection] - duplicate occurrenceIDs.csv
+Report - [Collection] - duplicate occurrenceIDs.txt
   This reports contains a list of occurrenceIDs that appear more than once within a data set. An occurrenceID is meant to uniquely identify an Occurrence record globally. Duplicates are detected with a data set and should be resolved at the source. The columns in this report are:
 	occurrenceID - the duplicated occurrenceID.
 	NumberOfDups - the number of records that have the given occurrenceID.
 
-Report - [Collection] - indeterminate Geography.csv
+Report - [Collection] - indeterminate Geography.txt
   This report contains a list of records for which the verbatim original contents of the geography result in an ambiguity that cannot be resolved with the information in the geographic fields alone. During data processing, VertNet attempts to provide standardized geography using the Darwin Core geographic terms (continent, country, stateProvince, county, municipality, island, islandGroup, waterBody) based on the originally provided higher geographic data - fields less specific than the locality field (http://rs.tdwg.org/dwc/terms/index.htm#locality). If the original geography could be interpreted as more than one distinct region, or if the original geography is self-inconsistent, the record will appear in the report. The columns in this report are:
 	collectionCode - the code for the collection the record belongs in.
 	catalogNumber - the catalog number for the record.
@@ -74,7 +74,7 @@ Report - [Collection] - indeterminate Geography.csv
 Report - [Collection] - missing catalogNumber.csv
   This reports contains a list of complete source records that do not have a record identifier that can serve as a persistent catalog number. If the catalogNumber is meant to uniquely identify records within a collection or data set, then missing catalog numbers are errors and should be resolved at the source. Records without catalog numbers are not included in the processed results. The columns in this report are the same as in the source data set.
 
-Report - [Collection] - missing coordinate.csv
+Report - [Collection] - missing coordinate.txt
   This reports contains a list of records for which the orginal coordinates are numeric  decimalLatitude>90 or decimalLatitude<-90 or decimalLongitude>180 or decimalLongitude<-180.
 The columns in this report are:
 	collectionCode - the code for the collection the record belongs in.
@@ -83,13 +83,13 @@ The columns in this report are:
 	decimalLongitude - the value given for the decimalLongitude after processing. 
 	error - an indicator of which coordinate value is missing after processing.
 
-Report - [Collection] - month out of Range.csv
+Report - [Collection] - Month out of range.txt
   This reports contains a list of records for which the month field is less than 1 or greater than 12. The columns in this report are:
 	collectionCode - the code for the collection the record belongs in.
 	catalogNumber - the catalog number for the record.
 	month - the value of the month field that is outside the valid range.
 
-Report - [Collection] - non-standard Continent.csv
+Report - [Collection] - non-standard Continent.txt
   This report contains the list of records for which the verbatim original continent does not match the standard value determined from the VertNet geographic authority, the latest version of which can be found at https://raw.github.com/tucotuco/DwCVocabs/master/vocabs/Geography.csv. The verbatim and standardized continent and waterBody are included because these concepts are often conflated in original data.
 	collectionCode - the code for the collection the record belongs in.
 	catalogNumber - the catalog number for the record.
@@ -98,21 +98,21 @@ Report - [Collection] - non-standard Continent.csv
     verbatimWaterBody - the contents of the original data that were mapped to the Darwin Core waterBody field for the given catalogNumber.
 	Waterbody - the standardized value of the waterBody for the record.
 
-Report - [Collection] - non-standard Country.csv
+Report - [Collection] - non-standard Country.txt
   This report contains the list of records for which the verbatim original country does not match the standard value determined from the VertNet geographic authority, the latest version of which can be found at https://raw.github.com/tucotuco/DwCVocabs/master/vocabs/Geography.csv.
 	collectionCode - the code for the collection the record belongs in.
 	catalogNumber - the catalog number for the record.
 	verbatimCountry - the contents of the original data that were mapped to the Darwin Core country field for the given catalogNumber.
 	Country - the standardized value of the country for the record.
 
-Report - [Collection] - non-standard County.csv
+Report - [Collection] - non-standard County.txt
   This report contains the list of records for which the verbatim original county does not match the standard value determined from the VertNet geographic authority, the latest version of which can be found at https://raw.github.com/tucotuco/DwCVocabs/master/vocabs/Geography.csv.
 	collectionCode - the code for the collection the record belongs in.
 	catalogNumber - the catalog number for the record.
 	verbatimCounty - the contents of the original data that were mapped to the Darwin Core county field for the given catalogNumber.
 	County - the standardized value of the county for the record.
 
-Report - [Collection] - non-standard Family.csv
+Report - [Collection] - non-standard Family.txt
   This report contains the list of records for which the verbatim original family does not match the standard value determined from the VertNet taxonomic classification authority, the latest version of which can be found at https://raw.github.com/tucotuco/DwCVocabs/master/vocabs/Classification.csv
 	collectionCode - the code for the collection the record belongs in.
 	catalogNumber - the catalog number for the record.
@@ -122,7 +122,7 @@ Report - [Collection] - non-standard Family.csv
 	standardFamily - the currently accepted family according to the taxonomic authority provided in the authority field in this report.
 	authority - the authority in which this classification for the accepted genus was found.
 
-Report - [Collection] - non-standard Genus.csv
+Report - [Collection] - non-standard Genus.txt
   This report contains the list of records for which the verbatim original genus does not match the standard value determined from the VertNet taxonomic classification authority, the latest version of which can be found at https://raw.github.com/tucotuco/DwCVocabs/master/vocabs/Classification.csv
 	collectionCode - the code for the collection the record belongs in.
 	catalogNumber - the catalog number for the record.
@@ -131,7 +131,7 @@ Report - [Collection] - non-standard Genus.csv
 	authority - the authority in which this classification for the accepted genus was found.
 	error - The reason why the original genus is not accepted.
 
-Report - [Collection] - non-standard Island.csv
+Report - [Collection] - non-standard Island.txt
   This report contains the list of records for which the verbatim original island does not match the standard value determined from the VertNet geographic authority, the latest version of which can be found at https://raw.github.com/tucotuco/DwCVocabs/master/vocabs/Geography.csv. The verbatim and standardized island, islandGroup, waterBody, and county are included because these concepts may be needed to determine the reason why the original value is not standard.
 	collectionCode - the code for the collection the record belongs in.
 	catalogNumber - the catalog number for the record.
@@ -144,7 +144,7 @@ Report - [Collection] - non-standard Island.csv
     verbatimCounty - the contents of the original data that were mapped to the Darwin Core county field for the given catalogNumber.
 	County - the standardized value of the county for the record.
 
-Report - [Collection] - non-standard IslandGroup.csv
+Report - [Collection] - non-standard IslandGroup.txt
   This report contains the list of records for which the verbatim original islandGroup does not match the standard value determined from the VertNet geographic authority, the latest version of which can be found at https://raw.github.com/tucotuco/DwCVocabs/master/vocabs/Geography.csv. The verbatim and standardized island, islandGroup, and waterBody are included because these concepts may be needed to determine the reason why the original value is not standard.
 	collectionCode - the code for the collection the record belongs in.
 	catalogNumber - the catalog number for the record.
@@ -155,7 +155,7 @@ Report - [Collection] - non-standard IslandGroup.csv
     verbatimIsland - the contents of the original data that were mapped to the Darwin Core island field for the given catalogNumber.
 	Island - the standardized value of the island for the record.
 
-Report - [Collection] - non-standard Municipality.csv
+Report - [Collection] - non-standard Municipality.txt
   This report contains the list of records for which the verbatim original municipality does not match the standard value determined from the VertNet geographic authority, the latest version of which can be found at https://raw.github.com/tucotuco/DwCVocabs/master/vocabs/Geography.csv. The verbatim and standardized country, stateProvince, county, and municipality are included because these concepts may be needed to determine the reason why the original value is not standard.
 	collectionCode - the code for the collection the record belongs in.
 	catalogNumber - the catalog number for the record.
@@ -168,7 +168,7 @@ Report - [Collection] - non-standard Municipality.csv
     verbatimMunicipality - the contents of the original data that were mapped to the Darwin Core municipality field for the given catalogNumber.
 	Municipality - the standardized value of the municipality for the record.
 
-Report - [Collection] - non-standard Order.csv
+Report - [Collection] - non-standard Order.txt
   This report contains the list of records for which the verbatim original taxonomic order does not match the standard value determined from the VertNet taxonomic classification authority, the latest version of which can be found at https://raw.github.com/tucotuco/DwCVocabs/master/vocabs/Classification.csv
 	collectionCode - the code for the collection the record belongs in.
 	catalogNumber - the catalog number for the record.
@@ -180,7 +180,7 @@ Report - [Collection] - non-standard Order.csv
 	family - the contents of the original data that were mapped to the Darwin Core family field for the given catalogNumber.
 	standardFamily - the currently accepted family according to the taxonomic authority provided in the authority field in this report.
 
-Report - [Collection] - non-standard StateProvince.csv
+Report - [Collection] - non-standard StateProvince.txt
   This report contains the list of records for which the verbatim original stateProvince does not match the standard value determined from the VertNet geographic authority, the latest version of which can be found at https://raw.github.com/tucotuco/DwCVocabs/master/vocabs/Geography.csv. The verbatim and standardized country, stateProvince, county, islandGroup, and island are included because these concepts may be needed to determine the reason why the original value is not standard.
 	collectionCode - the code for the collection the record belongs in.
 	catalogNumber - the catalog number for the record.
@@ -195,7 +195,7 @@ Report - [Collection] - non-standard StateProvince.csv
 	verbatimIsland - the contents of the original data that were mapped to the Darwin Core island field for the given catalogNumber.
 	Island - the standardized value of the island for the record.
 
-Report - [Collection] - non-standard WaterBody.csv
+Report - [Collection] - non-standard WaterBody.txt
   This report contains the list of records for which the verbatim original waterBody does not match the standard value determined from the VertNet geographic authority, the latest version of which can be found at https://raw.github.com/tucotuco/DwCVocabs/master/vocabs/Geography.csv. The verbatim and standardized waterBody and continent are included because these concepts are often conflated in original data.
 	collectionCode - the code for the collection the record belongs in.
 	catalogNumber - the catalog number for the record.
@@ -204,7 +204,7 @@ Report - [Collection] - non-standard WaterBody.csv
 	verbatimContinent - the contents of the original data that were mapped to the Darwin Core continent field for the given catalogNumber.
 	Continent - the standardized value of the continent for the record.
 
-Report - [Collection] - not higherGeography.csv
+Report - [Collection] - not higherGeography.txt
   This report contains a list of records for which the verbatim original contents of the geography contain information that does not fit within the standard Darwin Core geography fields. During data processing, VertNet attempts to provide standardized geography using the Darwin Core geographic terms (continent, country, stateProvince, county, municipality, island, islandGroup, waterBody) based on the originally provided higher geographic data - fields less specific than the locality field (http://rs.tdwg.org/dwc/terms/index.htm#locality). If the original geography contains information that does not correspond with any of these fields, the record will appear in the report. The columns in this report are:
 	collectionCode - the code for the collection the record belongs in.
 	catalogNumber - the catalog number for the record.
@@ -235,7 +235,7 @@ Report - [Collection] - StatsDifferences.csv
 	became - the value of the term after migration.
 	modified - the date on which the record was modified by running a migration.
 
-Report - [Collection] - year out of Range.csv
+Report - [Collection] - Year out of range.txt
   This reports contains a list of records for which the year field is less than 1750 or greater than the year at the time the migrator was run. The columns in this report are:
 	collectionCode - the code for the collection the record belongs in.
 	catalogNumber - the catalog number for the record.

@@ -1,5 +1,7 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2016-03-14 Changed all reports except "Report - missing catalogNumber", "Report - StatsDifferences", and "Report - StatsCompleteness" to use export specifications and to output .txt files instead of csv files.
+2016-03-14 Added an InvertsDwC2.mdb database to the workspace folder.
 2016-02-03 Major overhaul to date processing to permit eventDate as year only and to correctly process the dd MMM pattern.
 2015-11-25 Further amendments for date processing.
 2015-11-24 Added processing for Entomological date styles (e.g., 24.xi.2015). Amended date processing that created misformatted ISO8601 date ranges with a leading / (e.g., /2015-11-24).
