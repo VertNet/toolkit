@@ -20,21 +20,22 @@ For a new migrator installation:
 18) Add, customize and enable queries for dynamicProperties if necessary. If any dynamicProperties are enabled, be sure to enable the query "*Update dynamicProperties to close". This puts the closing bracket ({) on the JSON content in the dynamicProperties field.
 19) Edit and enable the query "Update Preparations for Tissues" to make preparations include tissue information if it does not already.
 20) Edit the query "Report - missing catalogNumber" to use the catalog number field from the source.
-21) Copy the latest Vocabulary databases (VertNetVocabularies.mdb and VertNetVocabulariesManager.mdb) from Dropbox\Vocabularies to .\source. Make sure there is no Vocabulary editing in progress elsewhere. If there is, wait for that to be done and get the copies from Dropbox afterwards.
-22) Set the correct migrators to be run for the institution in the script "1a - RunMigrators.bat".
-23) Set the correct migrators to be aggregated in the macro "Aggregate and Export" in templates\AggregatorTemple.mdb.
-24) Test the migrator by running the appropriate collection-level script, such as "DwC2migration-Aves.bat".
-25) Fix any errors that occur by editing the template database in the .\template folder (not the database made in the .\workspace folder by the RunMigrators script).
-26) Iterate through steps 24 and 25 until no errors occur.
-27) Check the results of the migration by looking at the data in the SimpleDwC table in the migrated database in the folder .\workspace.
-28) Make any adjustments needed to populate the SimpleDwC table as completely as possible by editing queries and turning them on or off in the macro "Do DwC2 migration".
-29) Run the collection-level script (e.g., "DwC2migration-Aves.bat") again.
-30) Iterate through steps 27 through 29 until the data are complete.
-31) Open the database .\source\VertNetVocabulariesManager.mdb and run the macro "Unchecked Local Vocabs". This will open windows showing new terms that haven't been resolved yet in the vocabulary manager. 
-32) Edit the open vocabularies to map to standard versions of the terms. Some of these may be deferred, such as preparations and lifestage, which are incredibly diverse. Try especially to resolve Classifications and Geography (US, MX, CA for sure).
-33) Run the script "1a - RunMigrators.bat" again to make a copy of the SimpleDwC table with vocabulary lookups included.
-34) Run the script "1b - RunAggregators.bat" after all distinct collections have been finished up to this step to make a final migration data set.
-35) Compare the counts on output to SimpleDwCForVertNet.csv with the expected number from the processed collection SimpleDwC tables. Resolve any discrepencies.
-36) Archive the error report files (called "Report -*" in the reports folder) to the appropriate Dropbox folder of the data publisher. Alert the publisher about these reports so they can improve their data at the source, if desired.
-37) Zip and the copy the SimpleDwCForVertNet.csv file to Dropbox for review by the data publisher.
-38) Upload the file SimpleDwCForVertNet.zip to the resource on the IPT when it is authorized by the data publisher.
+21) If there are media data to be processed from associatedMedia into the Audubon Core Media Extension, turn on the steps under "Add Media to AudubonCoreExtension" in the macro "Do DwC2 Migration". The steps that must be checked for customization begin with * in the macro Comment. If a separate media file is provided, additional customization will need to be done to link in those data and populate the table "AudubonCoreExtension" and modify the query "*Append media to AudubonCoreExtension" based on the linked file.
+22) Copy the latest Vocabulary databases (VertNetVocabularies.mdb and VertNetVocabulariesManager.mdb) from Dropbox\Vocabularies to .\source. Make sure there is no Vocabulary editing in progress elsewhere. If there is, wait for that to be done and get the copies from Dropbox afterwards.
+23) Set the correct migrators to be run for the institution in the script "1a - RunMigrators.bat".
+24) Set the correct migrators to be aggregated in the macro "Aggregate and Export" in templates\AggregatorTemple.mdb.
+25) Test the migrator by running the appropriate collection-level script, such as "DwC2migration-Aves.bat".
+26) Fix any errors that occur by editing the template database in the .\template folder (not the database made in the .\workspace folder by the RunMigrators script).
+27) Iterate through steps 24 and 25 until no errors occur.
+28) Check the results of the migration by looking at the data in the SimpleDwC table in the migrated database in the folder .\workspace.
+29) Make any adjustments needed to populate the SimpleDwC table as completely as possible by editing queries and turning them on or off in the macro "Do DwC2 migration".
+30) Run the collection-level script (e.g., "DwC2migration-Aves.bat") again.
+31) Iterate through steps 27 through 29 until the data are complete.
+32) Open the database .\source\VertNetVocabulariesManager.mdb and run the macro "Unchecked Local Vocabs". This will open windows showing new terms that haven't been resolved yet in the vocabulary manager. 
+33) Edit the open vocabularies to map to standard versions of the terms. Some of these may be deferred, such as preparations and lifestage, which are incredibly diverse. Try especially to resolve Classifications and Geography (US, MX, CA for sure).
+34) Run the script "1a - RunMigrators.bat" again to make a copy of the SimpleDwC table with vocabulary lookups included.
+35) Run the script "1b - RunAggregators.bat" after all distinct collections have been finished up to this step to make a final migration data set.
+36) Compare the counts on output to SimpleDwCForVertNet.csv with the expected number from the processed collection SimpleDwC tables. Resolve any discrepencies.
+37) Archive the error report files (called "Report -*" in the reports folder) to the appropriate Dropbox folder of the data publisher. Alert the publisher about these reports so they can improve their data at the source, if desired.
+38) Zip and the copy the SimpleDwCForVertNet.csv file to Dropbox for review by the data publisher.
+39) Upload the file SimpleDwCForVertNet.zip to the resource on the IPT when it is authorized by the data publisher.
