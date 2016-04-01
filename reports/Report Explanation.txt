@@ -71,6 +71,12 @@ Report - [Collection] - indeterminate Geography.txt
 	verbatimIsland - the contents of the original data that were mapped to the Darwin Core island field for the given catalogNumber.
 	error - a description of why the geography of the record is indeterminate, ambiguous, or self-inconsistent.
 
+Report - [Collection] - individualCount out of range.txt
+  This reports contains a list of records for which the individualCount field is not numeric or is less than 0. The columns in this report are:
+	collectionCode - the code for the collection the record belongs in.
+	catalogNumber - the catalogNumber for the record.
+	individualCount - the value of the individualCount field that is outside the valid range.
+
 Report - [Collection] - missing catalogNumber.csv
   This reports contains a list of complete source records that do not have a record identifier that can serve as a persistent catalog number. If the catalogNumber is meant to uniquely identify records within a collection or data set, then missing catalog numbers are errors and should be resolved at the source. Records without catalog numbers are not included in the processed results. The columns in this report are the same as in the source data set.
 

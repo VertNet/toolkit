@@ -1,7 +1,9 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
-2016-03-14 To support providing a lookup between a deprecated occurrenceID and its replacement occurrenceID in a ResourceRelationship Extension, added tables ResourceRelationshipExtension and ResourceRelationshipExtensionTemplate. Added query "Append occurrenceIDs to ResourceRelationshipExtension". Added processing steps to the macro "Do DwC2Migration", but turned off by default.
-2016-03-14 To support processing multiple media in the associatedMedia field into distinct Audubon Core records. Added tables "Media" and "MediaTemplate". Added query "qryMedia". Added Module "MediaModule". Added processing steps to the macro "Do DwC2Migration", but turned off by default.
+2016-04-01 Amended minor details in the macro "Do DwC2 Migration". Not functionally different from the 2016-03-31 version.
+2016-03-31 Added query "Report - individualCount out of range" and support to check that the original field is nunerica and not less than zero. Added to Reports generated as well.
+2016-03-14 To support providing a lookup between a deprecated occurrenceID and its replacement occurrenceID in a ResourceRelationship Extension, added tables ResourceRelationshipExtension and ResourceRelationshipExtensionTemplate. Added query "Append occurrenceIDs to ResourceRelationshipExtension". Added processing steps to the macro "Do DwC2 Migration", but turned off by default.
+2016-03-14 To support processing multiple media in the associatedMedia field into distinct Audubon Core records. Added tables "Media" and "MediaTemplate". Added query "qryMedia". Added Module "MediaModule". Added processing steps to the macro "Do DwC2 Migration", but turned off by default.
 2016-03-14 Changed all reports except "Report - missing catalogNumber", "Report - StatsDifferences", and "Report - StatsCompleteness" to use export specifications and to output .txt files instead of csv files.
 2016-03-14 Added an InvertsDwC2.mdb database to the workspace folder.
 2016-02-03 Major overhaul to date processing to permit eventDate as year only and to correctly process the dd MMM pattern.
@@ -21,7 +23,7 @@ List of changes to the migrator template, in reverse chronological order of impl
 2015-06-12 Added common path to Access 2015 executable in the .bat scripts.
 2015-04-23 Amended query "Update modified to yyyy-mm-dd" so that it only affects values where the criterion IsDate(modified)=True is satisfied.
 2015-04-11 Added scripts, databases, and macros for Audio data sets.
-2015-04-09 Amended macro "Do DwC2 migration" to turn on append lookup months inside the LegacyDates processing series.
+2015-04-09 Amended macro "Do DwC2 Migration" to turn on append lookup months inside the LegacyDates processing series.
 2015-04-08 Modified the query "LegacyDates processing 02a" to trim white space from the calculated LatestDateCollected.
 2015-04-08 Added queries "LegacyDates processing 02c" and "LegacyDates processing 02d" to accomodate verbatimEventDates of the form XX XXX XXXX.
 2015-04-06 Replace generic queries "Update Occurrence - preparations for Part X" with queries for specific part names. Doesn't change the functionality of any existing migrators, just makes it easier to create new ones.
@@ -35,9 +37,9 @@ List of changes to the migrator template, in reverse chronological order of impl
 2015-02-18 Added and amended steps in Legacy Date processing to account for verbatimEventDates of that have IsDate() true but have no day (e.g., Jun-48) and for decades (e.g., 1980s). Upgrading from the version 2015-01-27 should replace the entire LegacyDates processing section.
 2015-01-27 Amended joins in queries "Append to StatsCompleteness" and "diff-..." to use processingID instead of ID. This caused quality stats not to be catured from 31 Oct 2014 to 27 Jan 2015.
 2015-01-05 Amended query "Update dynamicProperties to close" so that it always closes.
-2014-12-24 Amended queries "Step [nn]" to better reflect the activity. Renumbered steps 24 and later. Set them to run in the macro "Do DwC2 migration".
+2014-12-24 Amended queries "Step [nn]" to better reflect the activity. Renumbered steps 24 and later. Set them to run in the macro "Do DwC2 Migration".
 2014-12-24 Added query "Update Location 2 - countryCode Country Continent" to grab potentially standardized geography from vocabs even if not finished when the current countryCode is null. This will make much more of the geography standard even if it isn't fully reconciled in the LookupGeography table.
-2014-12-23 Reduced all reports to one series in the migration macro. Added renaming reports by collection type to the scripts "DwC2migration-[type].bat".
+2014-12-23 Reduced all reports to one series in the macro "Do DwC2  Migration". Added renaming reports by collection type to the scripts "DwC2migration-[type].bat".
 2014-12-23 Updated the query "Update references in SimpleDwC" to match the slugify function in the VertNet indexer under most circumstances. Does not account for accents as slugify does. Should not be a problem for migrators.
 2014-12-19 Increased the number of split files to 10 instead of 6 to accomodate files up to 1M records when running script "1c - RunAggregators.bat".
 2014-12-19 Corrected query "Update from LegacyElevations" so that it populates min and max elevationInMeters rather than min and max depthInMeters.

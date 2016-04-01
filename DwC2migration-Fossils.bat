@@ -68,6 +68,7 @@ move "reports\Report - decimalLatLong not numeric.txt"           "reports\Report
 move "reports\Report - decimalLatLong out of range.txt"          "reports\Report - Fossils - decimalLatLong out of range.txt"
 move "reports\Report - duplicate occurrenceIDs.txt"              "reports\Report - Fossils - duplicate occurrenceIDs.txt"
 move "reports\Report - duplicate catalogNumber.txt"              "reports\Report - Fossils - duplicate catalogNumber.txt"
+move "reports\Report - individualCount out of range.txt"         "reports\Report - Audio - individualCount out of range.txt"
 move "reports\Report - missing catalogNumber.csv"                "reports\Report - Fossils - missing catalogNumber.csv"
 move "reports\Report - missing coordinate.txt"                   "reports\Report - Fossils - missing coordinate.txt"
 move "reports\Report - Month out of range.txt"                   "reports\Report - Fossils - Month out of range.txt"
