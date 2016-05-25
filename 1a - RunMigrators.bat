@@ -22,4 +22,5 @@ REM CALL DwC2migration-Fungi.bat
 REM CALL DwC2migration-Herps.bat
 REM CALL DwC2migration-Inverts.bat
 REM CALL DwC2migration-Mammals.bat
+REM CALL DwC2migration-Plants.bat
 CALL DwC2migration-Verts.bat
