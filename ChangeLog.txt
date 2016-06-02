@@ -1,5 +1,6 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2016-06-02 Modified macro "Do DwC2 Migration" to remove records with duplicate occurrenceIDs from table SimpleDwC rather than from table SimpleDwC-verbatim.
 2016-05-25 Added support for a Plants migrator bat file and made missing Fungi migrator bat file.
 2016-05-22 Amended DwC2migration-X.bat scripts to name the IndividualCount out of range report correctly based on the script being run.
 2016-04-01 Amended minor details in the macro "Do DwC2 Migration". Not functionally different from the 2016-03-31 version.
