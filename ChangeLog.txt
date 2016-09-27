@@ -1,5 +1,6 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2016-09-27 Fixes to major release, which included some mappings based on a non-generic linked occurrence table.
 2016-09-23 Added Plants processing to the migrator suite.
 2016-09-23 Major overhaul to vocabularies and  associated queries. Updates to migrators older than today must use this or newer migrator template. The old ones are incompatible with the newer vocabularies. This change is a move closer to replacing the Access-based migrators with Kurator workflows.
 2016-06-02 Modified macro "Do DwC2 Migration" to remove records with duplicate occurrenceIDs from table SimpleDwC rather than from table SimpleDwC-verbatim.
