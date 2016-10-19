@@ -1,5 +1,6 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2016-10-19 Cleaned up query "SimpleDwC-verbatim from Specimens" to map to standard Darwin Core field names.
 2016-10-01 Added processing steps for Dates (format yyyy-mm/yyyy-mm) and ScientificNames containing 'cf'. Added organismQuantity and organismQuantityType to the SimpleDwC structures throughout.
 2016-09-27 Fixes to major release, which included some mappings based on a non-generic linked occurrence table.
 2016-09-23 Added Plants processing to the migrator suite.
