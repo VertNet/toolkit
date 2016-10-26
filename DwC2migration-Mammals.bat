@@ -36,6 +36,8 @@ if exist %accessexe% goto accessfound
 set accessexe="C:\Program Files (x86)\Microsoft Office\Office14\MSACCESS.exe"
 if exist %accessexe% goto accessfound
 set accessexe="C:\Program Files\Microsoft Office\Office15\MSACCESS.exe"
+if exist %accessexe% goto accessfound
+set accessexe="C:\Program Files (x86)\Microsoft Office\root\Office16\MSACCESS.exe"
 if not exist %accessexe% goto end
 :accessfound
 
