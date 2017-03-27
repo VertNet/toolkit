@@ -1,5 +1,6 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2017-03-27 Changed names of queries "Update occurrenceID in SimpleDwC" and "Update references in SimpleDwC" to "Update SimpleDwC - occurrenceID" and "Update SimpleDwC - references" just for consistency.
 2017-03-13 Added capacity to interpret date information from verbatimEventDates of the form DD-mmm-YY when year is also given.
 2017-01-26 Amended 'Update to' expression for query "Update dynamicProperties for Weight" to avoid syntax errors.
 2017-01-16 Added capacity to interpret date information from verbatimEventDates of the form DDmmmYYYY.
