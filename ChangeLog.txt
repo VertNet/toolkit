@@ -1,5 +1,6 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2017-06-12 Added verbatimCoordinates to the default mapping list for the query "Legacy Coordinates from Specimens".
 2017-06-12 Amended the expressions to be explicit on quoting for all dynamicProperties updaters so that the quoting does not cause them to fail.
 2017-06-04 Improved the interpretation of multiple associatedMedia into the Audubon Core extension.
 2017-03-27 Changed names of queries "Update occurrenceID in SimpleDwC" and "Update references in SimpleDwC" to "Update SimpleDwC - occurrenceID" and "Update SimpleDwC - references" just for consistency.
