@@ -1,5 +1,6 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2017-08-16 Amended query "Update Taxon 2 - nomenclaturalCode" to apply changes only if nomenclaturalCode is null.
 2017-08-14 Amended misspelling in query "Update dynamicProperties for SnoutVentLength". Confirmed that the misspelling did not affect any records published in VertNet.
 2017-06-12 Added verbatimCoordinates to the default mapping list for the query "Legacy Coordinates from Specimens".
 2017-06-12 Amended the expressions to be explicit on quoting for all dynamicProperties updaters so that the quoting does not cause them to fail.
