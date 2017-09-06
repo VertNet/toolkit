@@ -1,5 +1,6 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2017-08-26 Added vocabulary management for coordinatePrecision, identificationVerificationStatus, license, nomenclaturalStatus, organismScope, day, and taxonomicStatus.
 2017-08-18 Corrected references in all queries "SimpleDwC without matching LookupX" to change the refence from ID to occurrenceID, since ID was removed from the SimpleDwC structures. Previous version threw parameter errors when running Do DwC2 migration macro.
 2017-08-17 Changed the structure of the default linked file to match the complete Simple Dawrin Core to facilitate making Event- and Taxon-based migrators. Changed the structure of SimpleDwC-verbatim and SimpleDwC to match. Added hitherto missing Event and Occurrence fields to the query "SimpleDwC2 - verbatim from Specimens". Removed the query "SimpleDwC2 - verbatim from Specimens - common". We did not use it in practice.
 2017-08-17 Added extensive commentary and indicators of required and to-be-customized queries in the macro "Do DwC2 Migration".
