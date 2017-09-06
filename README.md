@@ -1,3 +1,4 @@
+<img src="https://github.com/VertNet/toolkit/blob/develop/VertNet Migrator Toolkit Logo.png" height="150"><br>
 # VertNet Darwin Core Data Migrator Toolkit
 
 
