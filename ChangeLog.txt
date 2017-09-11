@@ -1,5 +1,6 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2017-09-11 Added paths for default locations of Access.
 2017-09-10 Corrected query "Lookup - organismScope".
 2017-08-26 Added vocabulary management for coordinatePrecision, identificationVerificationStatus, license, nomenclaturalStatus, organismScope, day, and taxonomicStatus.
 2017-08-18 Corrected references in all queries "SimpleDwC without matching LookupX" to change the refence from ID to occurrenceID, since ID was removed from the SimpleDwC structures. Previous version threw parameter errors when running Do DwC2 migration macro.
