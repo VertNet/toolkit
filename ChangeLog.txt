@@ -1,18 +1,19 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2017-09-13 Amended AggregatorTemplate.mdb to rename queries and tables with "ForVertNet" to "ForIPT" instead. Also amended Append queries and SimpleDwCForIPT structure to contain the new fields added in version 2017-08-17.
 2017-09-11 Changed links to vocabulary lookup tables in DwC2ExtractTemplate-Verts.mdb to point to VocabulariesMaster.mdb rather than VertNetVocabularies.mdb.
 2017-09-11 Removed incorrect mapping of verbatimLongitude to verbatimCoordinateSystem in query "SimpleDwC - verbatim from Specimens". Not sure when that crept in.
 2017-09-11 Added paths for default locations of Access.
 2017-09-10 Corrected query "Lookup - organismScope".
 2017-08-26 Added vocabulary management for coordinatePrecision, identificationVerificationStatus, license, nomenclaturalStatus, organismScope, day, and taxonomicStatus.
-2017-08-18 Corrected references in all queries "SimpleDwC without matching LookupX" to change the refence from ID to occurrenceID, since ID was removed from the SimpleDwC structures. Previous version threw parameter errors when running Do DwC2 migration macro.
-2017-08-17 Changed the structure of the default linked file to match the complete Simple Dawrin Core to facilitate making Event- and Taxon-based migrators. Changed the structure of SimpleDwC-verbatim and SimpleDwC to match. Added hitherto missing Event and Occurrence fields to the query "SimpleDwC2 - verbatim from Specimens". Removed the query "SimpleDwC2 - verbatim from Specimens - common". We did not use it in practice.
+2017-08-18 Corrected references in all queries "SimpleDwC without matching LookupX" to change the reference from ID to occurrenceID, since ID was removed from the SimpleDwC structures. Previous version threw parameter errors when running Do DwC2 migration macro.
+2017-08-17 Changed the structure of the default linked file to match the complete Simple Darwin Core to facilitate making Event- and Taxon-based migrators. Changed the structure of SimpleDwC-verbatim and SimpleDwC to match. Added hitherto missing Event and Occurrence fields to the query "SimpleDwC2 - verbatim from Specimens". Removed the query "SimpleDwC2 - verbatim from Specimens - common". We did not use it in practice.
 2017-08-17 Added extensive commentary and indicators of required and to-be-customized queries in the macro "Do DwC2 Migration".
-2017-08-17 Amended queries "Append new month to LookupMonth from month" and "Append new month to LookupMonth from endmonth" to correctly add new vocabulary varients from those fields.
+2017-08-17 Amended queries "Append new month to LookupMonth from month" and "Append new month to LookupMonth from endmonth" to correctly add new vocabulary variants from those fields.
 2017-08-16 Amended query "Update Taxon 2 - nomenclaturalCode" to apply changes only if nomenclaturalCode is null.
 2017-08-14 Amended misspelling in query "Update dynamicProperties for SnoutVentLength". Confirmed that the misspelling did not affect any records published in VertNet.
 2017-06-12 Added verbatimCoordinates to the default mapping list for the query "Legacy Coordinates from Specimens".
-2017-06-12 Amended the expressions to be explicit on quoting for all dynamicProperties updaters so that the quoting does not cause them to fail.
+2017-06-12 Amended the expressions to be explicit on quoting for all dynamicProperties updater queries so that the quoting does not cause them to fail.
 2017-06-04 Improved the interpretation of multiple associatedMedia into the Audubon Core extension.
 2017-03-27 Changed names of queries "Update occurrenceID in SimpleDwC" and "Update references in SimpleDwC" to "Update SimpleDwC - occurrenceID" and "Update SimpleDwC - references" just for consistency.
 2017-03-13 Added capacity to interpret date information from verbatimEventDates of the form DD-mmm-YY when year is also given.
@@ -22,27 +23,27 @@ List of changes to the migrator template, in reverse chronological order of impl
 2016-10-01 Added processing steps for Dates (format yyyy-mm/yyyy-mm) and ScientificNames containing 'cf'. Added organismQuantity and organismQuantityType to the SimpleDwC structures throughout.
 2016-09-27 Fixes to major release, which included some mappings based on a non-generic linked occurrence table.
 2016-09-23 Added Plants processing to the migrator suite.
-2016-09-23 Major overhaul to vocabularies and  associated queries. Updates to migrators older than today must use this or newer migrator template. The old ones are incompatible with the newer vocabularies. This change is a move closer to replacing the Access-based migrators with Kurator workflows.
+2016-09-23 Major overhaul to vocabularies and  associated queries. Updates to migrators older than today must use this or newer migrator template. The old ones are incompatible with the newer vocabularies. This change is a move closer to replacing the Access-based migrators with Kurator work flows.
 2016-06-02 Modified macro "Do DwC2 Migration" to remove records with duplicate occurrenceIDs from table SimpleDwC rather than from table SimpleDwC-verbatim.
 2016-05-25 Added support for a Plants migrator bat file and made missing Fungi migrator bat file.
 2016-05-22 Amended DwC2migration-X.bat scripts to name the IndividualCount out of range report correctly based on the script being run.
 2016-04-01 Amended minor details in the macro "Do DwC2 Migration". Not functionally different from the 2016-03-31 version.
-2016-03-31 Added query "Report - individualCount out of range" and support to check that the original field is nunerica and not less than zero. Added to Reports generated as well.
+2016-03-31 Added query "Report - individualCount out of range" and support to check that the original field is numeric and not less than zero. Added to Reports generated as well.
 2016-03-14 To support providing a lookup between a deprecated occurrenceID and its replacement occurrenceID in a ResourceRelationship Extension, added tables ResourceRelationshipExtension and ResourceRelationshipExtensionTemplate. Added query "Append occurrenceIDs to ResourceRelationshipExtension". Added processing steps to the macro "Do DwC2 Migration", but turned off by default.
 2016-03-14 To support processing multiple media in the associatedMedia field into distinct Audubon Core records. Added tables "Media" and "MediaTemplate". Added query "qryMedia". Added Module "MediaModule". Added processing steps to the macro "Do DwC2 Migration", but turned off by default.
 2016-03-14 Changed all reports except "Report - missing catalogNumber", "Report - StatsDifferences", and "Report - StatsCompleteness" to use export specifications and to output .txt files instead of csv files.
 2016-03-14 Added an InvertsDwC2.mdb database to the workspace folder.
 2016-02-03 Major overhaul to date processing to permit eventDate as year only and to correctly process the dd MMM pattern.
 2015-11-25 Further amendments for date processing.
-2015-11-24 Added processing for Entomological date styles (e.g., 24.xi.2015). Amended date processing that created misformatted ISO8601 date ranges with a leading / (e.g., /2015-11-24).
-2015-10-23 Amended Legagy Coordinate processing queries to interpret new pattern found in MNHN Mammals (e.g., 09°10,391'_N 008° 56,062'_W and 49°21 Sud 67°10 Est).
+2015-11-24 Added processing for Entomological date styles (e.g., 24.xi.2015). Amended date processing that created badly formatted ISO8601 date ranges with a leading / (e.g., /2015-11-24).
+2015-10-23 Amended Legacy Coordinate processing queries to interpret new pattern found in MNHN Mammals (e.g., 09°10,391'_N 008° 56,062'_W and 49°21 Sud 67°10 Est).
 2015-10-21 Added queries for additional dynamicProperties based on fields in UMMZ Birds. Rearranged the order of dynamicProperty additions to alphabetical.
 2015-10-15 Added support for the Audubon Core Extension.
 2015-10-13 Added queries for additional dynamicProperties based on fields in CRCM Birds and Mammals.
 2015-10-13 Added query in Legacy Coordinate processing to translate European decimal indicator "," to ".".
 2015-10-09 Added script globalnamesresolver.json to be used in OpenRefine to call on the Global Names Resolver API. This is for convenience. It does not affect the migrator.
 2015-09-20 Added criterion null to query "Update Taxon 2 - scientificName" so that original scientificNames that ought to be kept (e.g, those containing authorship) are not overwritten. 
-2015-09-05 Further changed Coordinate queries to accommodate idiosyncracies found in CM Herp data. Added query "Update Identification - dateIdentified."
+2015-09-05 Further changed Coordinate queries to accommodate idiosyncrasies found in CM Herp data. Added query "Update Identification - dateIdentified."
 2015-09-04 Changed Legacy Coordinate queries to prioritize verbatim coordinates from processing over degrees minutes seconds based on TCWC data set. Otherwise some coordinates in verbatim latitude and longitude were lost because there where zero values in the degrees minutes seconds fields.
 2015-09-04 Added queries "Update Occurrence - preparations for blood sample" and "Update Occurrence - preparations for ectoparasites".
 2015-08-06 Added processing for duplicate occurrenceIDs.
@@ -51,23 +52,23 @@ List of changes to the migrator template, in reverse chronological order of impl
 2015-04-11 Added scripts, databases, and macros for Audio data sets.
 2015-04-09 Amended macro "Do DwC2 Migration" to turn on append lookup months inside the LegacyDates processing series.
 2015-04-08 Modified the query "LegacyDates processing 02a" to trim white space from the calculated LatestDateCollected.
-2015-04-08 Added queries "LegacyDates processing 02c" and "LegacyDates processing 02d" to accomodate verbatimEventDates of the form XX XXX XXXX.
+2015-04-08 Added queries "LegacyDates processing 02c" and "LegacyDates processing 02d" to accommodate verbatimEventDates of the form XX XXX XXXX.
 2015-04-06 Replace generic queries "Update Occurrence - preparations for Part X" with queries for specific part names. Doesn't change the functionality of any existing migrators, just makes it easier to create new ones.
 2015-04-04 Added queries for various dynamicProperties. Made others that are for lengths consistent in checking for the condition <>"0".
-2015-04-01 Added query "LegacyDates processing 02b" to process verbatimDates of the form YYYYMMDD. Updated the macro "LegacyDates Test" to include this query and added two examples to teh table "LegacyDatesTest".
+2015-04-01 Added query "LegacyDates processing 02b" to process verbatimDates of the form YYYYMMDD. Updated the macro "LegacyDates Test" to include this query and added two examples to the table "LegacyDatesTest".
 2015-04-01 Changed query "LegacyDates processing 02" to let through verbatimDates that are numeric and only 4 digits rather than any numeric.
 2015-03-19 Made corrections to the file "README - MigratorPrepSteps.txt".
 2015-03-05 Corrected query "Append new Geography to LookupGeography", which wrote the municipality data into the municipality field in the LookupGeography table rather than writing it into the verbatimMunicipality field. Relevant error to any collection with municipality in the original data.
 2015-02-25 Added check for "n/a" in queries "Update Taxon - specificEpithet for unknown" and "Update Taxon - infraspecificEpithet for unknown".
-2015-02-25 Changed separator in the "withold" queries from "," to " | ".
+2015-02-25 Changed separator in the "withhold" queries from "," to " | ".
 2015-02-18 Added and amended steps in Legacy Date processing to account for verbatimEventDates of that have IsDate() true but have no day (e.g., Jun-48) and for decades (e.g., 1980s). Upgrading from the version 2015-01-27 should replace the entire LegacyDates processing section.
-2015-01-27 Amended joins in queries "Append to StatsCompleteness" and "diff-..." to use processingID instead of ID. This caused quality stats not to be catured from 31 Oct 2014 to 27 Jan 2015.
+2015-01-27 Amended joins in queries "Append to StatsCompleteness" and "diff-..." to use processingID instead of ID. This caused quality statistics not to be captured from 31 Oct 2014 to 27 Jan 2015.
 2015-01-05 Amended query "Update dynamicProperties to close" so that it always closes.
 2014-12-24 Amended queries "Step [nn]" to better reflect the activity. Renumbered steps 24 and later. Set them to run in the macro "Do DwC2 Migration".
-2014-12-24 Added query "Update Location 2 - countryCode Country Continent" to grab potentially standardized geography from vocabs even if not finished when the current countryCode is null. This will make much more of the geography standard even if it isn't fully reconciled in the LookupGeography table.
+2014-12-24 Added query "Update Location 2 - countryCode Country Continent" to grab potentially standardized geography from vocabularies even if not finished when the current countryCode is null. This will make much more of the geography standard even if it isn't fully reconciled in the LookupGeography table.
 2014-12-23 Reduced all reports to one series in the macro "Do DwC2  Migration". Added renaming reports by collection type to the scripts "DwC2migration-[type].bat".
 2014-12-23 Updated the query "Update references in SimpleDwC" to match the slugify function in the VertNet indexer under most circumstances. Does not account for accents as slugify does. Should not be a problem for migrators.
-2014-12-19 Increased the number of split files to 10 instead of 6 to accomodate files up to 1M records when running script "1c - RunAggregators.bat".
+2014-12-19 Increased the number of split files to 10 instead of 6 to accommodate files up to 1M records when running script "1c - RunAggregators.bat".
 2014-12-19 Corrected query "Update from LegacyElevations" so that it populates min and max elevationInMeters rather than min and max depthInMeters.
 2014-12-19 Added template queries "Update Occurrence - preparations for Part X" that facilitate the construction of the preparations field if the original has preparations in distinct fields.
 2014-12-18 Added query "Update references in SimpleDwC" to construct a reference to the record as it will appear in the VertNet portal if the record does not already have a references value.
@@ -79,20 +80,20 @@ List of changes to the migrator template, in reverse chronological order of impl
 2014-12-15 Added query "Update Occurrence - establishmentMeans" and removed expression to build establishmentMeans from queries "SimpleDwC-verbatim from Specimens" and "SimpleDwC-verbatim from Specimens - common".
 2014-12-15 Added query "Update occurrenceID in SimpleDwC" to set occurrenceIDs if they do not already exist in the source.
 2014-12-13 Corrected queries "LegacyDates processing 10", "LegacyDates processing 11" and "LegacyDates processing 15", which set beginday, endday, and day to null for dates on 31 August.
-2014-11-28 SimpleDwC-verbatim is now supposed to be filled with only those fields that can be mapped directly from the original. All other fields go through the Legacy table processing using queries such as "LegacyCoordinates from Specimens", "LegacyCoordinateUncertainties from Specimens", etc. Queries that are likely to require customization are marked in the macro comment with an asterix (*) - for example, "*SimpleDwC-verbatim from Specimens"
+2014-11-28 SimpleDwC-verbatim is now supposed to be filled with only those fields that can be mapped directly from the original. All other fields go through the Legacy table processing using queries such as "LegacyCoordinates from Specimens", "LegacyCoordinateUncertainties from Specimens", etc. Queries that are likely to require customization are marked in the macro comment with an asterisk (*) - for example, "*SimpleDwC-verbatim from Specimens"
 2014-11-18 Reordered processing, added reports, added diffs for new DwC terms.
 2014-11-18 Added query "Source" to filter records from "Occurrence" when populating table "Specimens". This query is what gets used by the query "Append Source Data to Specimens".
 2014-11-18 Changed linked table "Source" to "Occurrence.
 2014-11-17 Changed "report - missing catalogNumber" to be based on catalogNumber from Specimens table.
 2014-11-17 Changed structure and processing of LegacyData table to several distinct legacy tables for distinct aspects of the data (coordinates, coordinate uncertainties, dates, depths, elevations, scientific names.
-2014-11-17 Corrected query "Update modified from previous migration" to change records where mmodified is null in origin to be the value of modified in the previous migration.
-2014-11-17 Changed query "Append new Geography to LookupGeography" to add higherGeography string based on verbatim values of Darwin Core fields in preferred order and seperator (continent | country | stateProvince | county | municipality | waterBody | islandGroup | island).
-2014-11-17 Changed query "Update higherClassification with verbatim taxonomy" to use the preferred seperator " | ".
-2014-11-17 Changed query "Prepend verbatim geography to verbatimLocality" to map from Specimens table using preferred order and seperator (continent | country | stateProvince | county | municipality | waterBody | islandGroup | island). The query "Update higherGeography" still concatenates in the order and seperator (continent;country;stateProvince;county;island;islandGroup;waterBody;municipality) used in the key field in the linked table LookupGeography. Don't change this.
+2014-11-17 Corrected query "Update modified from previous migration" to change records where modified is null in origin to be the value of modified in the previous migration.
+2014-11-17 Changed query "Append new Geography to LookupGeography" to add higherGeography string based on verbatim values of Darwin Core fields in preferred order and separator (continent | country | stateProvince | county | municipality | waterBody | islandGroup | island).
+2014-11-17 Changed query "Update higherClassification with verbatim taxonomy" to use the preferred separator " | ".
+2014-11-17 Changed query "Prepend verbatim geography to verbatimLocality" to map from Specimens table using preferred order and separator (continent | country | stateProvince | county | municipality | waterBody | islandGroup | island). The query "Update higherGeography" still concatenates in the order and separator (continent;country;stateProvince;county;island;islandGroup;waterBody;municipality) used in the key field in the linked table LookupGeography. Don't change this.
 2014-11-17 Changed SpecimensTemplate and Specimens to have a primary key called processingID meant to be used only within the migrator to link records to the original Source imported to Specimens.
 2014-11-17 Changed Source model to link to an occurrence.txt file of a Darwin Core archive output from Simple Darwin Core version 2013-10-22 (previous version).
 2014-11-17 Changed structure of SimpleDwC, SimpleDwC-verbatim, and SimpleDwCTemplate to include new fields and change rights for license.
-2014-11-17 Major overhaul to accomodate Darwin Core version 2014-11-08. Re-ordered all processing. See above for other changes. Upgrades from old versions should be redone from scratch as this is migrator version is too different to just amend an old one.
+2014-11-17 Major overhaul to accommodate Darwin Core version 2014-11-08. Re-ordered all processing. See above for other changes. Upgrades from old versions should be redone from scratch as this is migrator version is too different to just amend an old one.
 2014-11-06 Added the missing queries 'diff-decimalLatitudeCount" and "diff-decimalLatitudeCount" and enabled them in the macro "Do DwC2 Migration".
 2014-10-10 Moved query "Update georeferences for null decLatLong" to follow queries "Update geodeticDatum to not recorded" and "Update georeferenceVerificationStatus to unverified" in macro "Do DwC2 Migration".
 2014-10-03 Added query "Update coordinateUncertaintyInMeters for precision".
@@ -136,17 +137,17 @@ List of changes to the migrator template, in reverse chronological order of impl
 2013-07-12 Added error field to the indeterminate geography report and began managing that field in VertNetVocabularies.mdb.
 2013-07-03 Amended Aggregator database for Append Queries (Fish, Fossil, Herp, and Mammal) that mapped verbatimCoordinates to verbatimCoordinateSystem.
 2013-07-03 Added GeorefVerificationStatus vocabulary management.
-2013-06-10 Added Purge processing for Dublic Core types Sound, StillImage, and MovingImage to PurgeNonprintingCharacters.sh and NewLineIssues.awk.
+2013-06-10 Added Purge processing for Dublin Core types Sound, StillImage, and MovingImage to PurgeNonprintingCharacters.sh and NewLineIssues.awk.
 2013-03-04 Corrected faulty logic in "Update DecLatLong for range" and "Update DecLatLong for non-numeric" queries.
 2013-05-03 Change strategy for verbatim classification. Store this in higherClassification with all ranks given in the source from genus up. Do not write over it with standardized values.
 2013-05-02 Added a duplicate catalogNumber report to the outputs.
 2013-05-01 Slightly rearranged and demarcated processing macro to distinguish production of SimpleDwC-verbatim, LegacyData, and SimpleDwC. Better demonstrates where data cleaning could be done outside the migrator.
 2013-05-01 Added some verbatimLatitude and Longitude processing queries used in CM migrator to produce decimalLatitude and Longitude.
-2013-04-18 Nonprinting character report (in RunAggregators script) added to outputs in reports folder.
+2013-04-18 Non-printing character report (in RunAggregators script) added to outputs in reports folder.
 2013-04-17 Added more paths in scripts to find MSACCESS.EXE so that scripts will run on a larger number of default configurations.
 2013-04-17 Added the capability to split the file ForIPT\SimpleDwCForVertNetPrePurge.csv into smaller files for purge processing to avoid out of memory errors.
 2013-04-15 Corrected the Prepend Geography to verbatimLocality query to be an update query.
-2013-04-15 Added LookupReproductiveCondition table to local vocabularies processing and MySQL, including Stats. Relinked to StatsCompleteness table.
+2013-04-15 Added LookupReproductiveCondition table to local vocabularies processing and MySQL, including statistics. Re-linked to StatsCompleteness table.
 2013-03-15 Created reports folder and changed report file export destinations to it.
 2013-03-15 Amended reports to compare verbatim original genus, family, order to standard versions - was comparing published versus standard.
 2013-03-15 Start adding non-DwC standard taxonomy rank information to dynamicProperties.
