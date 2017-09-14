@@ -1,5 +1,7 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2017-09-13 Amended query "Update from LegacyScientificNames" to capture the identificationQualifier.
+2017-09-13 Simplified macro "Do DwC2 migration" by removing sections of it to other macros, which are now invoked with RunMacro within "Do DwC2 migration".
 2017-09-13 Updates migrator macro "Do DwC2 migration" to enable all Legacy queries by default. It is easier to customize the queries called "LegacyXXX from Specimens" to propagate no changes (with processingID <0) than it is to enable and disable queries in the new macro editor.
 2017-09-13 Amended AggregatorTemplate.mdb to rename queries and tables with "ForVertNet" to "ForIPT" instead. Also amended Append queries and SimpleDwCForIPT structure to contain the new fields added in version 2017-08-17.
 2017-09-11 Changed links to vocabulary lookup tables in DwC2ExtractTemplate-Verts.mdb to point to VocabulariesMaster.mdb rather than VertNetVocabularies.mdb.
