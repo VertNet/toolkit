@@ -1,5 +1,6 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2017-09-17 Made report queries and output file names consistent with the casing of Darwin Core terms (e.g., "Report - non-standard islandGroup" instead of "Report - non-standard IslandGroup". This was to make the report explanation documentation consistent and less confusing. No functional change to the migrator.
 2017-09-13 Amended query "Update from LegacyScientificNames" to capture the identificationQualifier.
 2017-09-13 Simplified macro "Do DwC2 migration" by removing sections of it to other macros, which are now invoked with RunMacro within "Do DwC2 migration".
 2017-09-13 Updates migrator macro "Do DwC2 migration" to enable all Legacy queries by default. It is easier to customize the queries called "LegacyXXX from Specimens" to propagate no changes (with processingID <0) than it is to enable and disable queries in the new macro editor.
