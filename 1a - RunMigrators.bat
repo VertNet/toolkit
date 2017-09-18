@@ -12,15 +12,15 @@ REM This script assumes that the assumptions in all of its called scripts have
 REM been met.
 
 REM Run the migrators.
-REM CALL DwC2migration-Audio.bat
-REM CALL DwC2migration-Aves.bat
-REM CALL DwC2migration-Eggs.bat
-REM CALL DwC2migration-Ent.bat
-REM CALL DwC2migration-Fish.bat
-REM CALL DwC2migration-Fossils.bat
-REM CALL DwC2migration-Fungi.bat
-REM CALL DwC2migration-Herps.bat
-REM CALL DwC2migration-Inverts.bat
-REM CALL DwC2migration-Mammals.bat
-REM CALL DwC2migration-Plants.bat
-CALL DwC2migration-Verts.bat
+REM CALL DwC2migration.bat Audio
+REM CALL DwC2migration.bat Aves
+REM CALL DwC2migration.bat Eggs
+REM CALL DwC2migration.bat Ent
+REM CALL DwC2migration.bat Fish
+REM CALL DwC2migration.bat Fossils
+REM CALL DwC2migration.bat Fungi
+REM CALL DwC2migration.bat Herps
+REM CALL DwC2migration.bat Inverts
+REM CALL DwC2migration.bat Mammals
+REM CALL DwC2migration.bat Plants
+CALL DwC2migration.bat Verts
