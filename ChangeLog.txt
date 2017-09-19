@@ -1,5 +1,7 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2017-09-18 Amended query "Update Taxon2 - nomenclaturalCode" to consult a new vocabulary table called "phyla", which matches phylum to kingdom and nomenclaturalCode.
+2017-09-18 Added copies of Source.mdb, Legacy.mdb, and VerbatimDwC.mdb to workspace folder to facilitate migrator customization, as there are references to these database in the workspace in the DwC2ExtractTemplate.
 2017-09-18 Major overhaul to separate working tables into distinct databases to save space and allow for undivided processing of much larger data sets. Should allow for datasets of at least 500k records. Also simplified maintenance by making a single DwC2 migration bat files that is parametrized in calls from the script 1a - Run migrators.bat. Removed export specifications from Report query exports resulting in exports of .csv files rather than .txt files.
 2017-09-18 Updated reports to consistently use institutionCode along with collectionCode and catalogNumber. Cleaned up all reports to be consistent with new Report Explanation documents.
 2017-09-17 Made report queries and output file names consistent with the casing of Darwin Core terms (e.g., "Report - non-standard islandGroup" instead of "Report - non-standard IslandGroup". This was to make the report explanation documentation consistent and less confusing. No functional change to the migrator.
