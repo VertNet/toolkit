@@ -1,5 +1,6 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2017-09-20 Renamed placeholder file ForIPT\SimpleDwCForVertNet.csv to ForIPT\SimpleDwCForIPT.csv. No functional change to the migrator.
 2017-09-20 Added necessary copies of database templates into workspace.
 2017-09-18 Amended query "Update Taxon2 - nomenclaturalCode" to consult a new vocabulary table called "phyla", which matches phylum to kingdom and nomenclaturalCode.
 2017-09-18 Added copies of Source.mdb, Legacy.mdb, and VerbatimDwC.mdb to workspace folder to facilitate migrator customization, as there are references to these database in the workspace in the DwC2ExtractTemplate.
