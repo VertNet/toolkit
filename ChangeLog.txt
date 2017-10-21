@@ -1,6 +1,7 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
 2017-10-21 Corrected Report queries for non-standard genus, family, order.
+2017-10-20 Removed linked Occurrence table in SourceTemplate.mdb as well as the macro to load the Specimens table in that database. They were confusing and unnecessary.
 2017-10-20 Added occurrenceID to relevant reports.
 2017-09-20 Renamed placeholder file ForIPT\SimpleDwCForVertNet.csv to ForIPT\SimpleDwCForIPT.csv. No functional change to the migrator.
 2017-09-20 Added necessary copies of database templates into workspace.
