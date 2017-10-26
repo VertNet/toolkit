@@ -1,5 +1,6 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2017-10-26 Added missing fields samplingSizeValue and samplingSizeUnit to SimpleDwCForIPTquery in AggregatorTemplate.mdb.
 2017-10-21 Corrected Report queries for non-standard genus, family, order.
 2017-10-20 Removed linked Occurrence table in SourceTemplate.mdb as well as the macro to load the Specimens table in that database. They were confusing and unnecessary.
 2017-10-20 Added occurrenceID to relevant reports.
