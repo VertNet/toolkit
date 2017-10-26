@@ -99,5 +99,6 @@ move "reports\Report - non-standard StateProvince.csv"           "reports\Report
 move "reports\Report - non-standard WaterBody.csv"               "reports\Report - %1 - non-standard WaterBody.csv"
 move "reports\Report - not higherGeography.csv"                  "reports\Report - %1 - not higherGeography.csv"
 move "reports\Report - Year out of range.csv"                    "reports\Report - %1 - Year out of range.csv"
+move "reports\Report - verbatimEventDate not interpretable.csv"                    "reports\Report - %1 - verbatimEventDate not interpretable.csv"
 
 :end
