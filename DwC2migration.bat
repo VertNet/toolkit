@@ -49,16 +49,16 @@ if not exist %accessexe% goto end
 
 REM Make a copy of the current data source to the previous migration backup folder.
 del bkp\%1DwC2.mdb
-copy workspace\Source.mdb bkp\Source.mdb
+copy workspace\Source-%1.mdb bkp\Source-%1.mdb
 copy workspace\Legacy.mdb bkp\Legacy.mdb
 copy workspace\VerbatimDwC.mdb bkp\VerbatimDwC.mdb
 copy workspace\%1DwC2.mdb bkp\%1DwC2.mdb
 
 REM Make an access database in which to process the current data migration.
-copy templates\SourceTemplate.mdb workspace\Source.mdb
+copy templates\SourceTemplate-%1.mdb workspace\Source-%1.mdb
 copy templates\LegacyTemplate.mdb workspace\Legacy.mdb
 copy templates\VerbatimDwCTemplate.mdb workspace\VerbatimDwC.mdb
-copy templates\DwC2Extracttemplate-%1.mdb workspace\temp%1.mdb
+copy templates\DwC2ExtractTemplate-%1.mdb workspace\temp%1.mdb
 
 REM Run the "Do DwC2 Migration" macro to build the new data source and update the DateLastModified.
 %accessexe% %CD%\workspace\temp%1.mdb /x "Do DwC2 Migration"
@@ -99,6 +99,5 @@ move "reports\Report - non-standard StateProvince.csv"           "reports\Report
 move "reports\Report - non-standard WaterBody.csv"               "reports\Report - %1 - non-standard WaterBody.csv"
 move "reports\Report - not higherGeography.csv"                  "reports\Report - %1 - not higherGeography.csv"
 move "reports\Report - Year out of range.csv"                    "reports\Report - %1 - Year out of range.csv"
-move "reports\Report - verbatimEventDate not interpretable.csv"                    "reports\Report - %1 - verbatimEventDate not interpretable.csv"
 
 :end
