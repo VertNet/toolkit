@@ -6,6 +6,7 @@
   sed -e ':a' -e 'N' -e '$!ba' -e 's/.\n\"Sound/сс\"Sound/g' $f.2>$f.3
   sed -e ':a' -e 'N' -e '$!ba' -e 's/.\n\"StillImage/сс\"StillImage/g' $f.3>$f.4
   sed -e ':a' -e 'N' -e '$!ba' -e 's/.\n\"MovingImage/сс\"MovingImage/g' $f.4>$f.5
+  sed -e ':a' -e 'N' -e '$!ba' -e 's/.\n\"Text/сс\"Text/g' $f.4>$f.5
   # Change final new line to сс also.
   perl -p -e 's/\r\n$/сс/ if eof' $f.5 > $f.6
   # Remove all remaining \r (carriage returns), \n (line feeds), \v (vertical tabs), \f (form feeds), \t (horizontal tabs)
