@@ -1,5 +1,7 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2017-11-02 Further amendment of non-printing character purging script to accommodate Text.
+2017-11-02 Amended latest AggregatorTemplate to make processingID not a primary key, lest records be lost when aggregating two or more sources. This was a recently introduced error.
 2017-11-01 Added 'Text' as a type value to detect non-printing character issues.
 2017-11-01 Added 'Text' as a type value to detect at the beginning of a line to discover new line issues.
 2017-11-01 Changed SourceTemplate.mdb to SourceTemplate-Verts.mdb along with references to it in DwC2migration.bat to be able to have multiple sources when aggregating original data sets.
