@@ -1,5 +1,7 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2017-11-02 Further amendment of non-printing character purging script to accommodate Text and avoid memory errors with sed for long lines.
+2017-11-02 Amended query "Update Taxon 2 - subspecies to null for null species". Was the same as query "Update Taxon 2 - species subspecies to null for null genus".
 2017-11-02 Removed two unneeded versions of the Do DwC2 migration macro.
 2017-11-02 Further amendment of non-printing character purging script to accommodate Text.
 2017-11-02 Amended latest AggregatorTemplate to make processingID not a primary key, lest records be lost when aggregating two or more sources. This was a recently introduced error.
