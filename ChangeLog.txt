@@ -1,5 +1,6 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2017-11-30 Added ReportSummary reporting. Gives list of reports that have at least one record in the specific report.
 2017-11-07 Enabled the template migrator to run as delivered, without customization.
 2017-11-07 Added renaming of Report for uninterpretable verbatimEventDate.
 2017-11-02 Further amendment of non-printing character purging script to accommodate Text and avoid memory errors with sed for long lines.
