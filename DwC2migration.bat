@@ -72,6 +72,7 @@ REM move the new data source into the root data provider folder.
 move workspace\temp%1.mdb workspace\%1DwC2.mdb
 
 move "reports\Report - indeterminate Geography.csv"              "reports\Report - %1 - indeterminate Geography.csv"
+move "reports\Report - not higherGeography.csv"                  "reports\Report - %1 - not higherGeography.csv"
 move "reports\Report - coordinatePrecision not numeric.csv"      "reports\Report - %1 - coordinatePrecision not numeric.csv"
 move "reports\Report - coordinatePrecision out of Range.csv"     "reports\Report - %1 - coordinatePrecision out of Range.csv"
 move "reports\Report - coordinateUncertainties not numeric.csv"  "reports\Report - %1 - coordinateUncertainties not numeric.csv"
