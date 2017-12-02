@@ -1,5 +1,6 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2017-12-02 Added bibliographicCitation builder.
 2017-12-02 Corrected encoding and substitution characters in PurgeNonprintingCharacters.sh. Not sure where the encoding change occurred, as it does not appear in the commit history.
 2017-12-01 Changed the ReportSummary output column to "records affected" from "count".
 2017-11-30 Added depth reversal and elevation reversal.
