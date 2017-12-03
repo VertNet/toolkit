@@ -1,5 +1,6 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2017-12-03 Added a host of dynamicProperties queries from LACM Fish collection.
 2017-12-03 Added dynamicProperties queries for air temperature and groundtemperature. Added query for cleared and stained preparations.
 2017-12-03 Corrected query "Update SimpleDwC - references" to always use the occurrenceID.
 2017-12-02 Added bibliographicCitation builder.
