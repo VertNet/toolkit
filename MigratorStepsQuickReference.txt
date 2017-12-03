@@ -1,0 +1,28 @@
+Following is a quick reference list of steps to do during a migrator customization:
+1. Latest migrator version
+2. Source data into source folder
+3. Vocabs into source folder
+6. Link Occurrence in SourceTemplate-XXX.mdb
+8. Copy Occurrence structure to SpecimensTemplate and Specimens
+12. Copy SourceTemplate-XXX.mdb into Source-XXX.mdb in workspace
+13. Copy and rename DwC2ExtractTemplate-XXXX.mdb if necessary.
+15. Relink previousDwC2migration in DwC2ExtractTemplate-XXXX.mdb
+15. Relink Specimens table to Source-XXX.mdb in workspace
+16. Relink Occurrence table to source data
+18. Edit LookupCollectionMetadata
+19. Limited run by filtering in query "Source"
+20. SimpleDwC-verbatim from Specimens
+21. Encumbrances
+22. Prepend geographies
+23. Update higherClassification with verbatim taxonomy
+24. Legacy from Specimens queries
+25. dynamicProperties
+26. Preparations
+27. Missing catalogNumber report
+28. Extensions
+34. 1a - RunMigrators.bat
+33. Second pass removing any filter in query Source
+38. Resolve vocabs
+40. Final Pass
+5. Enable subsets in AggregatorTemplate.mdb
+41. 1c - RunAggregators.bat
