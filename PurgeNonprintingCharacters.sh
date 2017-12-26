@@ -1,4 +1,4 @@
-﻿#!/usr/bin/bash
+#!/usr/bin/bash
   f=$1  
   # Change new line followed by "PhysicalObject or "Event or "Sound or "StillImage or "MovingImage to @&@"PhysicalObject or @&@"Event or @&@"Sound or @&@"StillImage or @&@"MovingImage, respectively. These should be the beginnings of records.
   # sed has memory limitations in some distributions. Use perl instead.
