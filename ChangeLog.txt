@@ -1,5 +1,6 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2018-01-08 Further modified scripts "1c - RunAggregators.bat" and PurgeNonprintingCharacters.sh to use avoid out of memory errors.
 2017-12-25 Changed file encoding of PurgeNonprintingCharacters.sh from utf8 to ANSI so that it executes properly in sh shell.
 2017-12-23 Added ResourceRelationship processing to AggregatorTemplate.
 2017-12-22 Changed substitution character combination in PurgeNonprintingCharacters.sh from сс to @&@ to avoid potential encoding issues in some shell execution environments.

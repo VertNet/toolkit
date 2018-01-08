@@ -74,20 +74,26 @@ gawk -f NewLineIssues.awk ForIPT\SimpleDwCForIPTPrepurge.csv>ForIPT\NewLineIssue
 gawk -f BlankLineIssues.awk ForIPT\SimpleDwCForIPTPrepurge.csv>ForIPT\BlankLineIssues.txt
 
 REM Run script to remove non-printing control characters \r \n \f \v \t in data fields.
-REM Note that large files may cause out of memory errors resulting in an empty SimpleDwCForIPT.csv file.
-REM split the file into parts of 100000 lines or less each and purge them separately.
-REM Set to split on 100k records by default so that this only has to be edited if a memory error is encountered.
-split -l 100000 ForIPT\SimpleDwCForIPTPrePurge.csv ForIPT\part
+REM Note that large files may cause out of memory errors resulting in an empty SimpleDwCForIPT.csv 
+REM file. Hence, split the file into parts of 50000 lines or less each and purge them separately.
+REM Make sure that the there are sufficient calls to PurgeNonprintingCharacters.sh to process the 
+REM original SimpleDwCForIPTPrePurge.csv file.
+split -l 50000 ForIPT\SimpleDwCForIPTPrePurge.csv ForIPT\part
 sh PurgeNonprintingCharacters.sh ForIPT\partaa
 sh PurgeNonprintingCharacters.sh ForIPT\partab
+REM >100000 records
 sh PurgeNonprintingCharacters.sh ForIPT\partac
 sh PurgeNonprintingCharacters.sh ForIPT\partad
+REM >200000 records
 sh PurgeNonprintingCharacters.sh ForIPT\partae
 sh PurgeNonprintingCharacters.sh ForIPT\partaf
+REM >300000 records
 sh PurgeNonprintingCharacters.sh ForIPT\partag
 sh PurgeNonprintingCharacters.sh ForIPT\partah
+REM >400000 records
 sh PurgeNonprintingCharacters.sh ForIPT\partai
 sh PurgeNonprintingCharacters.sh ForIPT\partaj
+REM <=500000 records
 cd ForIPT
 cat partaa partab partac partad partae partaf partag partah partai partaj> SimpleDwCForIPT.csv
 REM cat partaa > SimpleDwCForIPT.csv
