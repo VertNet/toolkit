@@ -1,5 +1,6 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2018-02-12 Amended misspelling in macro query invocation "Append Plants to SimpeDwCForIPT".
 2018-01-09 Added queries for zooarchaeology preparations. Added queries for zooachaeology dynamicProperties.
 2018-01-08 Further modified scripts "1c - RunAggregators.bat" and PurgeNonprintingCharacters.sh to use avoid out of memory errors.
 2017-12-25 Changed file encoding of PurgeNonprintingCharacters.sh from utf8 to ANSI so that it executes properly in sh shell.
