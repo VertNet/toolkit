@@ -1,5 +1,6 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2018-04-07 Removed cast to Str in query "Update dynamicProperties for Weight" to avoid losing all previously processed dynamicProperties if the value of the mapped weight field is a string already.
 2018-04-06 Corrected Legacy Depths processing to not lose DepthUnits in step 06.
 2018-04-02 Added ChronometricDate support.
 2018-02-12 Amended misspelling in macro query invocation "Append Plants to SimpeDwCForIPT".
