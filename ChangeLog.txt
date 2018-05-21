@@ -1,5 +1,6 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2018-05-21 Amended Aggregator to correct invocation of query "Append Plants to SimpleDwCForIPT".
 2018-05-17 Amended Prepend queries that were reference the table SimpleDwC-verbatim from Specimens as their source of values to use the table Specimens instead. There is no functional difference from the previous version since these are customized queries anyway.
 2018-04-27 Added scientificNameAuthorship to scientificName construction in query "Update Taxon2 - scientificName" and took away condition scientificName is Null.
 2018-04-07 Removed cast to Str in query "Update dynamicProperties for Weight" to avoid losing all previously processed dynamicProperties if the value of the mapped weight field is a string already.
