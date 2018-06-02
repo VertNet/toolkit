@@ -1,5 +1,6 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2018-05-27 Added processing for dates with the pattern yyyy-mm-.
 2018-05-21 Changed the query "Update Location - higherGeography key" to not trim higherGeography. Doing so resulted in duplicate higherGeography values, which has the potential to have inconsistent resolution and creates a much more demanding join in the query "Update Location 2 - higherGeography". Made associated change in the query "Update higherGeography from verbatim values" in VocabularyManager.mdb.
 2018-05-21 Amended Aggregator to correct invocation of query "Append Plants to SimpleDwCForIPT".
 2018-05-17 Amended Prepend queries that were reference the table SimpleDwC-verbatim from Specimens as their source of values to use the table Specimens instead. There is no functional difference from the previous version since these are customized queries anyway.
