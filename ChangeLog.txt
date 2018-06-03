@@ -1,6 +1,7 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
-2018-06-01 Added three missing reports to macro "Reports". Fixed query "ReportSummary - coordinateUncertainties out of range", which had Group By instead of Count for the field occurrenceID. Not very much a summary that way. Doh!
+2018-06-02 Added processing of trailing single quote character (’) in queries "LegacyCoordinates processing 13" and "LegacyCoordinates processing 14".
+2018-06-02 Added three missing reports to macro "Reports". Fixed query "ReportSummary - coordinateUncertainties out of range", which had Group By instead of Count for the field occurrenceID. Not very much a summary that way. Doh!
 2018-05-27 Added processing for dates with the pattern yyyy-mm-.
 2018-05-21 Changed the query "Update Location - higherGeography key" to not trim higherGeography. Doing so resulted in duplicate higherGeography values, which has the potential to have inconsistent resolution and creates a much more demanding join in the query "Update Location 2 - higherGeography". Made associated change in the query "Update higherGeography from verbatim values" in VocabularyManager.mdb.
 2018-05-21 Amended Aggregator to correct invocation of query "Append Plants to SimpleDwCForIPT".
