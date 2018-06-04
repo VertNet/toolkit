@@ -23,10 +23,10 @@
   # \v (vertical tab), \f (form feed), and \t (horizontal tab)
   tr '\r\n\v\f\t' '     ' <$f.6 > $f.7
   rm $f.6
-  perl -0777 -pe 's/[[:space:]]*\"/\"/g' $f.7>$f.8
-  rm $f.7
+#  perl -0777 -pe 's/[[:space:]]*\"/\"/g' $f.7>$f.8
+#  rm $f.7
   # Change each сс to \r\n
-  perl -0777 -pe 's/сс/\r\n/g' $f.8>$f.9
+  perl -0777 -pe 's/сс/\r\n/g' $f.7>$f.8
+  rm $f.7
+  perl -0777 -pe 's/[[:space:]]*$// if eof' $f.8>$f
   rm $f.8
-  perl -0777 -pe 's/[[:space:]]*$// if eof' $f.9>$f
-  rm $f.9
