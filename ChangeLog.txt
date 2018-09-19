@@ -1,5 +1,6 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2018-09-19 Amended query "Update SimpleDwC - references" to substitute '-' for ':'.
 2018-07-14 Separated out modified queries to each deal with one field only in an attempt to avoid resource exceeded messages on large data sets. 
 2018-06-30 Updates to implement the new version of the ChronometricDate extension.
 2018-06-12 Amended macro "Reports" to invoke query "Report - elevations reversed" correctly, the Table Name had an extra space in it.
