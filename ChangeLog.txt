@@ -1,5 +1,6 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2018-11-03 Amended aggregation scripts to avoid lost records when cat-ing split files that did not have LF on the last row.
 2018-10-08 Added query "Update dynamicProperties for StreamWidth".
 2018-10-08 Amended LegacyElevation processing to interpret '0' and '0.0'. Amended query "Update dynamicProperties for Weight" to match field [Weight] as a default instead of the zooarchaeology pattern.
 2018-10-07 Amended LegacyDates processing to avoid interpretation of '0000' in verbatimDate as a real year.
