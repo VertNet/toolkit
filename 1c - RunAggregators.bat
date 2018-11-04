@@ -63,6 +63,7 @@ del ForIPT\SimpleDwCForIPT.csv.gz
 del ForIPT\SimpleDwCForIPT.zip
 
 REM Run script to prepend UTF8 Byte Order Marker bytes.
+REM The resulting file has rows ending only in LF, with a final row of only a LF.
 gawk -f utf8er.awk ForIPT\SimpleDwCForIPT.csv>ForIPT\testout.csv
 del ForIPT\SimpleDwCForIPT.csv
 del ForIPT\SimpleDwCForIPTPrepurge.csv
@@ -79,6 +80,8 @@ REM file. Hence, split the file into parts of 50000 lines or less each and purge
 REM Make sure that the there are sufficient calls to PurgeNonprintingCharacters.sh to process the 
 REM original SimpleDwCForIPTPrePurge.csv file.
 split -l 50000 ForIPT\SimpleDwCForIPTPrePurge.csv ForIPT\part
+REM At this point the part files each have 50000 rows or less with LF ending each row and LF only in the last row.
+REM Now, for each of the split files, remove non-printing characters and spaces leading up to a double quote.
 sh PurgeNonprintingCharacters.sh ForIPT\partaa
 sh PurgeNonprintingCharacters.sh ForIPT\partab
 REM >100000 records
@@ -93,14 +96,17 @@ sh PurgeNonprintingCharacters.sh ForIPT\partah
 REM >400000 records
 sh PurgeNonprintingCharacters.sh ForIPT\partai
 sh PurgeNonprintingCharacters.sh ForIPT\partaj
-REM <=500000 records
+REM >500000 records
+sh PurgeNonprintingCharacters.sh ForIPT\partak
+sh PurgeNonprintingCharacters.sh ForIPT\partal
+REM <=600000 records
 cd ForIPT
-cat partaa partab partac partad partae partaf partag partah partai partaj> SimpleDwCForIPT.csv
+cat partaa partab partac partad partae partaf partag partah partai partaj partak partal > SimpleDwCForIPT.csv
 REM cat partaa > SimpleDwCForIPT.csv
 rm parta*
-diff SimpleDwCForIPTPrepurge.csv SimpleDwCForIPT.csv > purge_diffs.txt
+REM diff SimpleDwCForIPTPrepurge.csv SimpleDwCForIPT.csv > purge_diffs.txt
 cd ..
-copy ForIPT\purge_diffs.txt reports\Report-LinesWithNonprintingCharacters.txt
+REM copy ForIPT\purge_diffs.txt reports\Report-LinesWithNonprintingCharacters.txt
 REM copy ForIPT\SimpleDwCForIPTprepurge.csv ForIPT\SimpleDwCForIPT.csv
 REM sh PurgeNonprintingCharacters.sh ForIPT\SimpleDwCForIPT.csv
 
@@ -108,7 +114,7 @@ REM Run NewLine reporting script again after purging new lines and carriage retu
 gawk -f NewLineIssues.awk ForIPT\SimpleDwCForIPT.csv>ForIPT\NewLineIssuesAfterCRLFRemoval.txt
 
 REM Remove the working copy of the Aggregator
-mv workspace\Aggregator.mdb bkp\Aggregator.mdb
+REM mv workspace\Aggregator.mdb bkp\Aggregator.mdb
 
 REM Archive the resulting SimpleDwCForIPT file with gzip.
 REM cd ForIPT
