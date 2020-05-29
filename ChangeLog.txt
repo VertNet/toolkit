@@ -1,5 +1,6 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2020-05-29 Added ChronometricDatesTemplate table and step to copy it to ChronometricDates table to insure that it is empty before processing.
 2019-07-15 Updated to new ChronometricAge extension.
 2018-11-03 Amended aggregation scripts to avoid lost records when cat-ing split files that did not have LF on the last row.
 2018-10-08 Added query "Update dynamicProperties for StreamWidth".
