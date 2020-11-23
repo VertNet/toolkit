@@ -1,5 +1,6 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2020-11-19 Put the Dynamic Properties macro back in. Updated to review version of ChronometricAge extension.
 2020-06-06 Major overhaul to ChronometricAges to allow a list of them in dynamicProperties.
 2020-05-29 Added ChronometricDatesTemplate table and step to copy it to ChronometricDates table to insure that it is empty before processing.
 2019-07-15 Updated to new ChronometricAge extension.
