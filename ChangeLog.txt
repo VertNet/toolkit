@@ -1,5 +1,6 @@
 List of changes to the migrator template, in reverse chronological order of implementation:
 
+2021-10-23 Updated ChronometricAges for ratified version.
 2021-02-04 Removed the 60 records from the LegacyDates table in templates/LegacyTemplate.mdb. These would have affected the first 60 records in any migrator if not removed first.
 2020-11-19 Put the Dynamic Properties macro back in. Updated to review version of ChronometricAge extension.
 2020-06-06 Major overhaul to ChronometricAges to allow a list of them in dynamicProperties.
